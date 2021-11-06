@@ -1,0 +1,44 @@
+@extends('admin_layouts.master')
+@section('title', 'Edit Galeri - LPPM ITK')
+
+@section('content')
+
+@if(count($errors)>0)
+@foreach($errors->all() as $error)
+<div class="alert alert-danger" role="alert">
+    {{ $error }}
+</div>
+@endforeach
+@endif
+
+@if(Session::has('success'))
+<div class="alert alert-success" role="alert">
+    {{ Session('success') }}
+</div>
+@endif
+
+<h1>Edit Galeri</h1><br>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="main-card mb-3 card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="" action="{{ route('galeri.update', $galeri->id) }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @method('PATCH ')
+                            <div class="position-relative form-group"><label>Judul</label><input name="judul" type="text" class="form-control" value="{{ $galeri->judul }}"></div>
+                            <div class="position-relative form-group"><label>Gambar</label><br>
+                                <img src="{{ asset($galeri->gambar) }}" class="img-fluid" style="width:200px"><br><br>
+                                <input name="gambar" type="file" class="form-control-file">
+                            </div>
+                            <button class="mt-1 btn btn-warning">Update</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@endsection
