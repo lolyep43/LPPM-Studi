@@ -23,14 +23,14 @@
         <div class="main-card mb-3 card">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-190">
                         <form class="" action="{{ route('hasil-pengabdian.update', $hasil_pengabdian->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH ')
                             <div class="position-relative form-group"><label>Pengabdi</label><input name="peneliti" type="text" class="form-control" value="{{ $hasil_pengabdian->peneliti }}"></div>
                             <div class="position-relative form-group"><label>Judul</label><input name="judul" type="text" class="form-control" value="{{ $hasil_pengabdian->judul }}"></div>
-                            <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="editor1">{{ $hasil_pengabdian->deskripsi }}</textarea></div>
-                            <div class="position-relative form-group"><label>Manfaat</label><textarea name="manfaat" class="form-control" id="editor2">{{ $hasil_pengabdian->manfaat }}</textarea></div>
+                            <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="konten">{{ $hasil_pengabdian->deskripsi }}</textarea></div>
+                            <div class="position-relative form-group"><label>Manfaat</label><textarea name="manfaat" class="form-control" id="konten">{{ $hasil_pengabdian->manfaat }}</textarea></div>
                     </div>
                     <div class="col-md-4">
                         <div class="position-relative form-group"><label>Tahun</label><input name="tahun" type="text" class="form-control" value="{{ $hasil_pengabdian->tahun }}"></div>
@@ -47,9 +47,12 @@
     </div>
 </div>
 
-<script src="https://cdn.ckeditor.com/4.14.1/basic/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace('editor1');
-    CKEDITOR.replace('editor2');
+    CKEDITOR.replace('konten', {
+        filebrowserUploadUrl: "{{route('post.image', ['_token' => csrf_token() ])}}",
+        filebrowserUploadMethod: 'form',
+        height: 500
+    });
 </script>
 @endsection
