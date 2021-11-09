@@ -48,7 +48,7 @@
     </div>
 </div>
 
-<script src="https://cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 <script>
    CKEDITOR.replace('konten', {
         filebrowserUploadUrl: "{{route('post.image', ['_token' => csrf_token() ])}}",
