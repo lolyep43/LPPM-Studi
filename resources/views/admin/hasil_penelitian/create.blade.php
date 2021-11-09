@@ -28,8 +28,10 @@
                             @csrf
                             <div class="position-relative form-group"><label>Peneliti</label><input name="peneliti" type="text" class="form-control"></div>
                             <div class="position-relative form-group"><label>Judul</label><input name="judul" type="text" class="form-control"></div>
-                            <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="editor1"></textarea></div>
+                            <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="konten" ></textarea></div>
                     </div>
+
+
                     <div class="col-md-6">
                         <div class="position-relative form-group"><label>Manfaat</label><textarea name="manfaat" class="form-control" id="editor2"></textarea></div>
                         <div class="position-relative form-group"><label>Tahun</label><input name="tahun" type="text" class="form-control"></div>
@@ -46,10 +48,13 @@
     </div>
 </div>
 
-<script src="https://cdn.ckeditor.com/4.14.1/basic/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace('editor1');
-    CKEDITOR.replace('editor2');
+   CKEDITOR.replace('konten', {
+        filebrowserUploadUrl: "{{route('post.image', ['_token' => csrf_token() ])}}",
+        filebrowserUploadMethod: 'form',
+        height: 500
+    });
 </script>
 
 @endsection

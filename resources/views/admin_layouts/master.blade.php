@@ -472,6 +472,13 @@
                                     Halaman
                                 </a>
                             </li>
+                            <li class="app-sidebar__heading">Tambah Akun</li>
+                            <li>
+                                <a href="{{ route('User.index') }}">
+                                    <i class="metismenu-icon pe-7s-user"></i>
+                                    Buat Akun
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

@@ -36,5 +36,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/galeri', 'GaleriController');
     Route::resource('/laboratorium', 'LaboratoriumController');
     Route::resource('/halaman', 'HalamanController');
+    Route::resource('/User', 'UserController');
     Route::post('/images', 'PostController@uploadImage')->name('post.image');
 });
