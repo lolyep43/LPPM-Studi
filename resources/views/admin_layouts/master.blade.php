@@ -449,6 +449,12 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="{{ route('inovasi-mandiri.index') }}">
+                                    <i class="metismenu-icon pe-7s-display2"></i>
+                                    Inovasi Mandiri
+                                </a>
+                            </li>
+                            <li>
                                 <a href="{{ route('hasil-pengabdian.index') }}">
                                     <i class="metismenu-icon pe-7s-display2"></i>
                                     Hasil Pengabdian
