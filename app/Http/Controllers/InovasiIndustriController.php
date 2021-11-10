@@ -64,7 +64,7 @@ class InovasiIndustriController extends Controller
     public function edit($id)
     {
         $inovasi_industri = InovasiIndustri::findorfail($id);
-        return view('admin.inovasi-industri.edit', compact('inovasi_industri'));
+        return view('admin.inovasi_industri.edit', compact('inovasi_industri'));
     }
 
     public function update(Request $request, $id)
