@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\InovasiMandiri;
+use App\InovasiIndustri;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class InovasiMandiriController extends Controller
+class InovasiIndustriController extends Controller
 {
     public function index()
     {
-        $inovasi_mandiri = InovasiMandiri::latest()->paginate(10);
-        return view('admin.inovasi_mandiri.index', compact('inovasi_mandiri'));
+        $inovasi_industri = InovasiIndustri::latest()->paginate(10);
+        return view('admin.inovasi_industri.index', compact('inovasi_industri'));
     }
 
     public function create()
     {
-        return view('admin.inovasi_mandiri.create');
+        return view('admin.inovasi_industri.create');
     }
 
     public function uploadImage(Request $request)
@@ -26,10 +26,10 @@ class InovasiMandiriController extends Controller
             $fileName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
             $fileName = $fileName . '_' . time() . '.' . $file->getClientOriginalExtension();
 
-            $file->move(public_path('public/uploads/inovasi-mandiri/'), $fileName);
+            $file->move(public_path('public/uploads/inovasi-industri/'), $fileName);
 
             $ckeditor = $request->input('CKEditorFuncNum');
-            $url = asset('public/uploads/inovasi-mandiri/' . $fileName);
+            $url = asset('public/uploads/inovasi-industri/' . $fileName);
             $msg = 'Image uploaded successfully';
             $response = "<script>window.parent.CKEDITOR.tools.callFunction($ckeditor, '$url', '$msg')</script>";
 
@@ -50,21 +50,21 @@ class InovasiMandiriController extends Controller
         $gambar = $request->gambar;
         $new_gambar = time() . $gambar->getClientOriginalName();
 
-        $inovasi_mandiri = InovasiMandiri::create([
+        $inovasi_industri = inovasiIndustri::create([
             'judul' => $request->judul,
             'konten' => $request->konten,
-            'gambar' => 'public/uploads/inovasi-mandiri/' . $new_gambar,
+            'gambar' => 'public/uploads/inovasi-industri/' . $new_gambar,
             'slug' => Str::slug($request->judul)
         ]);
 
-        $gambar->move('public/uploads/inovasi-mandiri/', $new_gambar);
-        return redirect()->route('inovasi-mandiri.index')->with('success', 'Data berhasil ditambahkan');
+        $gambar->move('public/uploads/inovasi-industri/', $new_gambar);
+        return redirect()->route('inovasi-industri.index')->with('success', 'Data berhasil ditambahkan');
     }
 
     public function edit($id)
     {
-        $inovasi_mandiri = InovasiMandiri::findorfail($id);
-        return view('admin.inovasi-mandiri.edit', compact('inovasi_mandiri'));
+        $inovasi_industri = InovasiIndustri::findorfail($id);
+        return view('admin.inovasi-industri.edit', compact('inovasi_industri'));
     }
 
     public function update(Request $request, $id)
@@ -74,17 +74,17 @@ class InovasiMandiriController extends Controller
             'konten' => 'required',
         ]);
 
-        $inovasi_mandiri = InovasiMandiri::findorfail($id);
+        $inovasi_industri = InovasiIndustri::findorfail($id);
 
         if ($request->has('gambar')) {
             $gambar = $request->gambar;
             $new_gambar = time() . $gambar->getClientOriginalName();
-            $gambar->move('public/uploads/inovasi-mandiri/', $new_gambar);
+            $gambar->move('public/uploads/inovasi-industri/', $new_gambar);
 
             $post_data = [
                 'judul' => $request->judul,
                 'konten' => $request->konten,
-                'gambar' => 'public/uploads/inovasi-mandiri/' . $new_gambar,
+                'gambar' => 'public/uploads/inovasi-industri/' . $new_gambar,
                 'slug' => Str::slug($request->judul)
             ];
         } else {
@@ -95,15 +95,15 @@ class InovasiMandiriController extends Controller
             ];
         }
 
-        $inovasi_mandiri->update($post_data);
-        return redirect()->route('inovasi-mandiri.index')->with('success', 'Data berhasil diperbarui');
+        $inovasi_industri->update($post_data);
+        return redirect()->route('inovasi-industri.index')->with('success', 'Data berhasil diperbarui');
     }
 
     public function destroy($id)
     {
-        $inovasi_mandiri = InovasiMandiri::findorfail($id);
-        $inovasi_mandiri->delete();
-        return redirect()->route('inovasi-mandiri.index')->with('success', 'Data berhasil dihapus');
+        $inovasi_industri = InovasiIndustri::findorfail($id);
+        $inovasi_industri->delete();
+        return redirect()->route('inovasi-industri.index')->with('success', 'Data berhasil dihapus');
     }
 
 }

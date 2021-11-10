@@ -16,6 +16,8 @@ Route::get('detail-hasil-penelitan/{slug}', 'BlogController@isi_hasil_penelitian
 Route::get('daftar-hasil-penelitian/', 'BlogController@list_hasil_penelitian')->name('hasil-penelitian.list');
 Route::get('detail-inovasi-mandiri/{slug}', 'BlogController@isi_inovasi_mandiri')->name('inovasi-mandiri.isi');
 Route::get('daftar-inovasi-mandiri/', 'BlogController@list_inovasi_mandiri')->name('inovasi-mandiri.list');
+Route::get('detail-inovasi-industri/{slug}', 'BlogController@isi_inovasi_industri')->name('inovasi-industri.isi');
+Route::get('daftar-inovasi-industri/', 'BlogController@list_inovasi_industri')->name('inovasi-industri.list');
 Route::get('detail-hasil-pengabdian/{slug}', 'BlogController@isi_hasil_pengabdian')->name('hasil-pengabdian.isi');
 Route::get('daftar-hasil-pengabdian/', 'BlogController@list_hasil_pengabdian')->name('hasil-pengabdian.list');
 Route::get('daftar-dokumen/', 'BlogController@list_dokumen')->name('dokumen.list');
@@ -34,6 +36,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/agenda', 'AgendaController');
     Route::resource('/hasil-penelitian', 'HasilPenelitianController');
     Route::resource('/inovasi-mandiri', 'InovasiMandiriController');
+    Route::resource('/inovasi-industri', 'InovasiIndustriController');
     Route::resource('/hasil-pengabdian', 'HasilPengabdianController');
     Route::resource('/dokumen', 'DokumenController');
     Route::resource('/galeri', 'GaleriController');

@@ -12,6 +12,7 @@ use App\Dokumen;
 use App\Galeri;
 use App\Laboratorium;
 use App\InovasiMandiri;
+use App\InovasiIndustri;
 use App\Halaman;
 use Illuminate\Http\Request;
 
@@ -81,6 +82,15 @@ class BlogController extends Controller
         return view('blog.inovasi_mandiri.detail_inovasi_mandiri', compact('data', 'post', 'pengumuman', 'agenda'));
     }
 
+    public function isi_inovasi_industri($slug)
+    {
+        $post = Posts::latest()->paginate(5);
+        $pengumuman = Pengumuman::latest()->paginate(5);
+        $agenda = Agenda::latest()->paginate(5);
+        $data = InovasiIndustri::where('slug', $slug)->get();
+        return view('blog.inovasi_industri.detail_inovasi_industri', compact('data', 'post', 'pengumuman', 'agenda'));
+    }
+
     public function isi_halaman($slug)
     {
         $post = Posts::latest()->paginate(5);
@@ -134,7 +144,16 @@ class BlogController extends Controller
         $data = InovasiMandiri::latest()->paginate(10);
         return view('blog.inovasi_mandiri.list_inovasi_mandiri', compact('data', 'post', 'pengumuman', 'agenda'));
     }
-    
+
+    public function list_inovasi_industri()
+    {
+        $post = Posts::latest()->paginate(5);
+        $pengumuman = Pengumuman::latest()->paginate(5);
+        $agenda = Agenda::latest()->paginate(5);
+        $data = InovasiIndustri::latest()->paginate(10);
+        return view('blog.inovasi_industri.list_inovasi_industri', compact('data', 'post', 'pengumuman', 'agenda'));
+    }
+
     public function list_hasil_pengabdian()
     {
         $post = Posts::latest()->paginate(5);

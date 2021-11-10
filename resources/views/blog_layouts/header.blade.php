@@ -89,7 +89,7 @@
                     <li class="drop-down"><a href="#!">INOVASI<i class="ion-chevron-down"></i></a>
                         <ul class="drop-down-menu drop-down-inner">
                             <li><a href="{{ route('inovasi-mandiri.list') }}">Inovasi Mandiri</a></li>
-                            <li><a href="/detail-halaman/inovasi-dengan-industri">Inovasi dengan Industri</a></li>
+                            <li><a href="{{ route('inovasi-industri.list') }}">Inovasi dengan Industri</a></li>
                         </ul>
                     </li>
                     <li><a href="{{ route('dokumen.list') }}">DOKUMEN</a>
