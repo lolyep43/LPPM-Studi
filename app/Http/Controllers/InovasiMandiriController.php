@@ -64,7 +64,7 @@ class InovasiMandiriController extends Controller
     public function edit($id)
     {
         $inovasi_mandiri = InovasiMandiri::findorfail($id);
-        return view('admin.inovasi-mandiri.edit', compact('inovasi_mandiri'));
+        return view('admin.inovasi_mandiri.edit', compact('inovasi_mandiri'));
     }
 
     public function update(Request $request, $id)
