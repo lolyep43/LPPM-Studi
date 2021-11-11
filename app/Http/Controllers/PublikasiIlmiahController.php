@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\HasilPenelitian;
+use App\PublikasiIlmiah;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 
-class HasilPenelitianController extends Controller
+class PublikasiIlmiahController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class HasilPenelitianController extends Controller
      */
     public function index()
     {
-        $hasil_penelitian = HasilPenelitian::latest()->paginate(10);
-        return view('admin.hasil_penelitian.index', compact('hasil_penelitian'));
+        $publikasi_ilmiah = PublikasiIlmiah::latest()->paginate(10);
+        return view('admin.publikasi_ilmiah.index', compact('publikasi_ilmiah'));
     }
 
     /**
@@ -27,7 +27,7 @@ class HasilPenelitianController extends Controller
      */
     public function create()
     {
-        return view('admin.hasil_penelitian.create');
+        return view('admin.publikasi_ilmiah.create');
     }
 
     /**
@@ -51,19 +51,19 @@ class HasilPenelitianController extends Controller
         $foto = $request->foto;
         $new_foto = time() . $foto->getClientOriginalName();
 
-        $hasil_penelitian = HasilPenelitian::create([
+        $publikasi_ilmiah = PublikasiIlmiah::create([
             'peneliti' => $request->peneliti,
             'judul' => $request->judul,
             'fokus_riset' => $request->fokus_riset,
             'deskripsi' => $request->deskripsi,
             'manfaat' => $request->manfaat,
             'tahun' => $request->tahun,
-            'foto' => 'public/uploads/hasil-penelitian/' . $new_foto,
+            'foto' => 'public/uploads/publikasi-ilmiah/' . $new_foto,
             'slug' => Str::slug($request->judul)
         ]);
 
-        $foto->move('public/uploads/hasil-penelitian/', $new_foto);
-        return redirect()->route('hasil-penelitian.index')->with('success', 'Hasil penelitian berhasil ditambahkan');
+        $foto->move('public/uploads/publikasi-ilmiah/', $new_foto);
+        return redirect()->route('publikasi-ilmiah.index')->with('success', 'Data berhasil ditambahkan');
     }
 
     /**
@@ -85,8 +85,8 @@ class HasilPenelitianController extends Controller
      */
     public function edit($id)
     {
-        $hasil_penelitian = HasilPenelitian::findorfail($id);
-        return view('admin.hasil_penelitian.edit', compact('hasil_penelitian'));
+        $publikasi_ilmiah = PublikasiIlmiah::findorfail($id);
+        return view('admin.publikasi_ilmiah.edit', compact('publikasi_ilmiah'));
     }
 
     /**
@@ -107,12 +107,12 @@ class HasilPenelitianController extends Controller
             'tahun' => 'required',
         ]);
 
-        $hasil_penelitian = HasilPenelitian::findorfail($id);
+        $publikasi_ilmiah = PublikasiIlmiah::findorfail($id);
 
         if ($request->has('foto')) {
             $foto = $request->foto;
             $new_foto = time() . $foto->getClientOriginalName();
-            $foto->move('public/uploads/hasil-penelitian/', $new_foto);
+            $foto->move('public/uploads/publikasi-ilmiah/', $new_foto);
 
             $post_data = [
                 'peneliti' => $request->peneliti,
@@ -120,7 +120,7 @@ class HasilPenelitianController extends Controller
                 'fokus_riset' => $request->fokus_riset,
                 'deskripsi' => $request->deskripsi,
                 'manfaat' => $request->manfaat,
-                'foto' => 'public/uploads/hasil-penelitian/' . $new_foto,
+                'foto' => 'public/uploads/publikasi-ilmiah/' . $new_foto,
                 'tahun' => $request->tahun,
                 'slug' => Str::slug($request->judul)
             ];
@@ -136,8 +136,8 @@ class HasilPenelitianController extends Controller
             ];
         }
 
-        $hasil_penelitian->update($post_data);
-        return redirect()->route('hasil-penelitian.index')->with('success', 'Hasil penelitian berhasil diperbarui');
+        $publikasi_ilmiahn->update($post_data);
+        return redirect()->route('publikasi-ilmiah.index')->with('success', 'Data berhasil diperbarui');
     }
 
     /**
@@ -148,8 +148,8 @@ class HasilPenelitianController extends Controller
      */
     public function destroy($id)
     {
-        $hasil_penelitian = HasilPenelitian::findorfail($id);
-        $hasil_penelitian->delete();
-        return redirect()->route('hasil-penelitian.index')->with('success', 'Hasil penelitian berhasil dihapus');
+        $publikasi_ilmiah = PublikasiIlmiah::findorfail($id);
+        $publikasi_ilmiah->delete();
+        return redirect()->route('publikasi-ilmiah.index')->with('success', 'Data berhasil dihapus');
     }
 }

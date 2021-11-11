@@ -83,7 +83,7 @@
                             <li><a href="{{ route('hasil-penelitian.list') }}">Hasil Penelitian</a></li>
                             <li><a href="{{ route('hasil-pengabdian.list') }}">Hasil Pengabdian</a></li>
                             <li><a href="/detail-halaman/buku-ajar">Buku Ajar</a></li>
-                            <li><a href="/detail-halaman/publikasi-ilmiah">Publikasi Ilmiah</a></li>
+                            <li><a href="{{ route('publikasi-ilmiah.list') }}">Publikasi Ilmiah</a></li>
                         </ul>
                     </li>
                     <li class="drop-down"><a href="#!">INOVASI<i class="ion-chevron-down"></i></a>

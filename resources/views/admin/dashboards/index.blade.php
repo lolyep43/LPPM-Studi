@@ -82,6 +82,24 @@
             </div>
         </div>
     </div>
+
+    <div class="col-md-6 col-lg-3">
+        <div class="card-shadow-success mb-3 widget-chart widget-chart2 text-left card">
+            <div class="widget-content">
+                <div class="widget-content-outer">
+                    <div class="widget-content-wrapper">
+                        <div class="widget-content-left pr-2 fsize-1">
+                            <div class="widget-numbers mt-0 fsize-3 text-success">{{ $publikasi_ilmiah->count() }}</div>
+                        </div>
+                    </div>
+                    <div class="widget-content-left fsize-1">
+                        <div class="text-muted opacity-6">Publikasi Ilmiah</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
     <div class="col-md-6 col-lg-3">
         <div class="card-shadow-warning mb-3 widget-chart widget-chart2 text-left card">
             <div class="widget-content">
@@ -111,6 +129,40 @@
                     </div>
                     <div class="widget-content-left fsize-1">
                         <div class="text-muted opacity-6">Galeri</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-10 col-lg-3">
+        <div class="card-shadow-danger mb-3 widget-chart widget-chart2 text-left card">
+            <div class="widget-content">
+                <div class="widget-content-outer">
+                    <div class="widget-content-wrapper">
+                        <div class="widget-content-left pr-2 fsize-1">
+                            <div class="widget-numbers mt-0 fsize-3 text-danger">{{ $inovasi_mandiri->count() }}</div>
+                        </div>
+                    </div>
+                    <div class="widget-content-left fsize-1">
+                        <div class="text-muted opacity-6">Inovasi Mandiri</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-10 col-lg-3">
+        <div class="card-shadow-danger mb-3 widget-chart widget-chart2 text-left card">
+            <div class="widget-content">
+                <div class="widget-content-outer">
+                    <div class="widget-content-wrapper">
+                        <div class="widget-content-left pr-2 fsize-1">
+                            <div class="widget-numbers mt-0 fsize-3 text-danger">{{ $inovasi_industri->count() }}</div>
+                        </div>
+                    </div>
+                    <div class="widget-content-left fsize-1">
+                        <div class="text-muted opacity-6">Inovasi dengan Industri</div>
                     </div>
                 </div>
             </div>

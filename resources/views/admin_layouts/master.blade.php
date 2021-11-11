@@ -66,17 +66,16 @@
 
                                 <div class="widget-content-left  ml-3 header-user-info">
                                     <div class="widget-heading">{{auth()->user()->name}}</div>
-
                                 </div>
-                                <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <i class="fa fa-angle-down ml-2 opacity-8"></i>
+
+                                <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                 </a>
                                 <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
                                     <a href="/logout" class="dropdown-item" onclick="return confirm('Anda yakin ingin logout?');">Logout</a>
                                 </div>
+
                                 <div class="widget-content-right header-user-info ml-3">
-
                                     <img width="30" class="rounded-circle" src="{{asset('backend/assets/images/avatars/1.png')}}" alt="">
-
                                 </div>
 
                             </div>
@@ -442,29 +441,18 @@
                                     Laboratorium
                                 </a>
                             </li>
-                            <li>
-                                <a href="{{ route('hasil-penelitian.index') }}">
-                                    <i class="metismenu-icon pe-7s-display2"></i>
-                                    Hasil Penelitian
-                                </a>
+                            <li class="drop-down"><a href="#!">Luaran<i class="metismenu-icon pe-7s-display2"></i></a>
+                                <ul class="drop-down-menu drop-down-inner">
+                                    <li><a href="{{ route('hasil-penelitian.index') }}">Inovasi Mandiri</a></li>
+                                    <li><a href="{{ route('hasil-pengabdian.index') }}">Inovasi dengan Industri</a></li>
+                                    <li><a href="{{ route('publikasi-ilmiah.index') }}">Publikasi Ilmiah</a></li>
+                                </ul>
                             </li>
-                            <li>
-                                <a href="{{ route('inovasi-mandiri.index') }}">
-                                    <i class="metismenu-icon pe-7s-display2"></i>
-                                    Inovasi Mandiri
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('inovasi-industri.index') }}">
-                                    <i class="metismenu-icon pe-7s-display2"></i>
-                                    Inovasi Industri
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('hasil-pengabdian.index') }}">
-                                    <i class="metismenu-icon pe-7s-display2"></i>
-                                    Hasil Pengabdian
-                                </a>
+                            <li class="drop-down"><a href="#!">Inovasi<i class="metismenu-icon pe-7s-display2"></i></a>
+                                <ul class="drop-down-menu drop-down-inner">
+                                    <li><a href="{{ route('inovasi-mandiri.index') }}">Inovasi Mandiri</a></li>
+                                    <li><a href="{{ route('inovasi-industri.index') }}">Inovasi dengan Industri</a></li>
+                                </ul>
                             </li>
                             <li>
                                 <a href="{{ route('dokumen.index') }}">

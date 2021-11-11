@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class HasilPenelitian extends Model
+class PublikasiIlmiah extends Model
 {
-    protected $table = 'hasil_penelitian';
+    protected $table = 'publikasi_ilmiah';
     protected $fillable  = ['peneliti', 'judul', 'fokus_riset', 'deskripsi',  'manfaat', 'foto', 'tahun', 'slug'];
     protected $guarded = [];
 }

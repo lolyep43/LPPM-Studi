@@ -8,6 +8,7 @@ use App\Pengumuman;
 use App\Agenda;
 use App\HasilPenelitian;
 use App\HasilPengabdian;
+use App\PublikasiIlmiah;
 use App\Dokumen;
 use App\Galeri;
 use App\Laboratorium;
@@ -73,6 +74,15 @@ class BlogController extends Controller
         return view('blog.hasil_pengabdian.detail_hasil_pengabdian', compact('data', 'post', 'pengumuman', 'agenda'));
     }
 
+    public function isi_publikasi_ilmiah($slug)
+    {
+        $post = Posts::latest()->paginate(5);
+        $pengumuman = Pengumuman::latest()->paginate(5);
+        $agenda = Agenda::latest()->paginate(5);
+        $data = PublikasiIlmiah::where('slug', $slug)->get();
+        return view('blog.publikasi_ilmiah.detail_publikasi_ilmiah', compact('data', 'post', 'pengumuman', 'agenda'));
+    }
+
     public function isi_inovasi_mandiri($slug)
     {
         $post = Posts::latest()->paginate(5);
@@ -136,6 +146,24 @@ class BlogController extends Controller
         return view('blog.hasil_penelitian.list_hasil_penelitian', compact('data', 'post', 'pengumuman', 'agenda'));
     }
 
+    public function list_hasil_pengabdian()
+    {
+        $post = Posts::latest()->paginate(5);
+        $pengumuman = Pengumuman::latest()->paginate(5);
+        $agenda = Agenda::latest()->paginate(5);
+        $data = HasilPengabdian::latest()->paginate(10);
+        return view('blog.hasil_pengabdian.list_hasil_pengabdian', compact('data', 'post', 'pengumuman', 'agenda'));
+    }
+
+    public function list_publikasi_ilmiah()
+    {
+        $post = Posts::latest()->paginate(5);
+        $pengumuman = Pengumuman::latest()->paginate(5);
+        $agenda = Agenda::latest()->paginate(5);
+        $data = PublikasiIlmiah::latest()->paginate(10);
+        return view('blog.publikasi_ilmiah.list_publikasi_ilmiah', compact('data', 'post', 'pengumuman', 'agenda'));
+    }
+
     public function list_inovasi_mandiri()
     {
         $post = Posts::latest()->paginate(5);
@@ -154,14 +182,7 @@ class BlogController extends Controller
         return view('blog.inovasi_industri.list_inovasi_industri', compact('data', 'post', 'pengumuman', 'agenda'));
     }
 
-    public function list_hasil_pengabdian()
-    {
-        $post = Posts::latest()->paginate(5);
-        $pengumuman = Pengumuman::latest()->paginate(5);
-        $agenda = Agenda::latest()->paginate(5);
-        $data = HasilPengabdian::latest()->paginate(10);
-        return view('blog.hasil_pengabdian.list_hasil_pengabdian', compact('data', 'post', 'pengumuman', 'agenda'));
-    }
+   
 
     public function list_dokumen()
     {

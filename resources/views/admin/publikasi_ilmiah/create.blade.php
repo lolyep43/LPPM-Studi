@@ -1,5 +1,5 @@
 @extends('admin_layouts.master')
-@section('title', 'Tambah Hasil Penelitian - LPPM ITK')
+@section('title', 'Tambah Publikasi Ilmiah - LPPM ITK')
 
 @section('content')
 
@@ -17,14 +17,14 @@
 </div>
 @endif
 
-<h1>Tambah Hasil Penelitian</h1><br>
+<h1>Tambah Publikasi Ilmiah</h1><br>
 <div class="row">
     <div class="col-lg-12">
         <div class="main-card mb-3 card">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <form class="" action="{{ route('hasil-penelitian.store') }}" method="POST" enctype="multipart/form-data">
+                        <form class="" action="{{ route('publikasi-ilmiah.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="position-relative form-group"><label>Peneliti</label><input name="peneliti" type="text" class="form-control"></div>
                             <div class="position-relative form-group"><label>Judul</label><input name="judul" type="text" class="form-control"></div>
