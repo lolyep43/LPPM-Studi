@@ -22,12 +22,12 @@
                         </div>
                     </div>
                     @endforeach
-
                     @if($data_hasil_penelitian->count() == 2)
                     <h6><a class="mt-15 plr-20 btn-b-lg btn-fill-primary dplay-block mlr-auto" href="{{ route('hasil-penelitian.list')}}"><b>Lihat Selengkapnya</b></a></h6>
                     @endif
-
                     <br>
+                </div>
+                <div class="mb-15 p-30 ptb-lg-25 plr-sm-15 card-view">
                     <h4 class="p-title"><b>Publikasi Ilmiah</b></h4>
                     @foreach($data_publikasi_ilmiah as $list_publikasi_ilmiah)
                     <div class="mb-15 sided-250x card-view">
@@ -43,11 +43,11 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-                @endforeach
+                    @endforeach
                 @if($data_publikasi_ilmiah->count() == 2)
                 <h6><a class="mt-15 plr-20 btn-b-lg btn-fill-primary dplay-block mlr-auto" href="{{ route('publikasi-ilmiah.list')}}"><b>Lihat Selengkapnya</b></a></h6>
                 @endif
+                </div> 
             </div>
             <div class="col-md-12 col-lg-4">
                 <div class="mb-30 p-30 card-view">

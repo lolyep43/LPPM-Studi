@@ -15,7 +15,7 @@
                         <div class="s-right ptb-25 plr-sm-20 pt-sm-20 pb-lg-5 plr-30 plr-xs-0">
                             <h4><a href="{{ route('hasil-penelitian.isi', $list_hasil_penelitian->slug)}}">{{$list_hasil_penelitian->judul}}</a></h4>
                             <ul class="mtb-10 list-li-mr-20 color-lite-black">
-                                <li><i class="mr-5 font-12 ion-paperclip"></i>Fokus Riset: {{$list_hasil_penelitian>fokus_riset}}</li><br>
+                                <li><i class="mr-5 font-12 ion-paperclip"></i>Fokus Riset: {{$list_hasil_penelitian->fokus_riset}}</li><br>
                                 <li><i class="mr-5 font-12 ion-android-person"></i>Ketua: {{$list_hasil_penelitian->peneliti}}</li><br>
                                 <li><i class="mr-5 font-12 ion-clock"></i>Tahun: {{$list_hasil_penelitian->tahun}}</li>
                             </ul>
@@ -26,6 +26,8 @@
                     <h6><a class="mt-15 plr-20 btn-b-lg btn-fill-primary dplay-block mlr-auto" href="{{ route('hasil-penelitian.list')}}"><b>Lihat Selengkapnya</b></a></h6>
                     @endif
                     <br>
+                </div>
+                <div class="mb-15 p-30 ptb-lg-25 plr-sm-15 card-view">
                     <h4 class="p-title"><b>Publikasi Ilmiah</b></h4>
                     @foreach($data_publikasi_ilmiah as $list_publikasi_ilmiah)
                     <div class="mb-15 sided-250x card-view">
@@ -41,11 +43,11 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-                @endforeach
+                    @endforeach
                 @if($data_publikasi_ilmiah->count() == 2)
                 <h6><a class="mt-15 plr-20 btn-b-lg btn-fill-primary dplay-block mlr-auto" href="{{ route('publikasi-ilmiah.list')}}"><b>Lihat Selengkapnya</b></a></h6>
                 @endif
+                </div> 
             </div>
             <div class="col-md-12 col-lg-4">
                 <div class="mb-30 p-30 card-view">
