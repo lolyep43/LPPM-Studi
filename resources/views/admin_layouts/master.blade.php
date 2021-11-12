@@ -443,8 +443,8 @@
                             </li>
                             <li class="drop-down"><a href="#!">Luaran<i class="metismenu-icon pe-7s-display2"></i></a>
                                 <ul class="drop-down-menu drop-down-inner">
-                                    <li><a href="{{ route('hasil-penelitian.index') }}">Inovasi Mandiri</a></li>
-                                    <li><a href="{{ route('hasil-pengabdian.index') }}">Inovasi dengan Industri</a></li>
+                                    <li><a href="{{ route('hasil-penelitian.index') }}">Hasil Penelitian</a></li>
+                                    <li><a href="{{ route('hasil-pengabdian.index') }}">Hasil Pengabdian</a></li>
                                     <li><a href="{{ route('publikasi-ilmiah.index') }}">Publikasi Ilmiah</a></li>
                                 </ul>
                             </li>

@@ -22,6 +22,10 @@ Route::get('detail-inovasi-industri/{slug}', 'BlogController@isi_inovasi_industr
 Route::get('daftar-inovasi-industri/', 'BlogController@list_inovasi_industri')->name('inovasi-industri.list');
 Route::get('detail-publikasi-ilmiah/{slug}', 'BlogController@isi_publikasi_ilmiah')->name('publikasi-ilmiah.isi');
 Route::get('daftar-publikasi-ilmiah/', 'BlogController@list_publikasi_ilmiah')->name('publikasi-ilmiah.list');
+Route::get('daftar-energi/', 'BlogController@list_energi')->name('energi.list');
+Route::get('daftar-pertanian-dan-pangan/', 'BlogController@list_pertanian_dan_pangan')->name('pertanian-dan-pangan.list');
+Route::get('daftar-smart-city/', 'BlogController@list_smart_city')->name('smart-city.list');
+Route::get('daftar-kemaritiman/', 'BlogController@list_kemaritiman')->name('kemaritiman.list');
 Route::get('daftar-dokumen/', 'BlogController@list_dokumen')->name('dokumen.list');
 Route::get('daftar-galeri/', 'BlogController@list_galeri')->name('galeri.list');
 Route::get('daftar-laboratorium/', 'BlogController@list_laboratorium')->name('laboratorium.list');

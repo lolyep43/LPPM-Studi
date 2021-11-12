@@ -66,10 +66,10 @@
                     </li>
                     <li class="drop-down"><a href="#!">FOKUS RISET<i class="ion-chevron-down"></i></a>
                         <ul class="drop-down-menu drop-down-inner">
-                            <li><a href="/detail-halaman/energi">Energi</a></li>
-                            <li><a href="/detail-halaman/pangan-dan-pertanian">Pangan dan Pertanian</a></li>
-                            <li><a href="/detail-halaman/smart-city">Smart City</a></li>
-                            <li><a href="/detail-halaman/kemaritiman">Kemaritiman</a></li>
+                            <li><a href="{{ route('energi.list') }}">Energi</a></li>
+                            <li><a href="{{ route('pertanian-dan-pangan.list') }}">Pangan dan Pertanian</a></li>
+                            <li><a href="{{ route('smart-city.list') }}">Smart City</a></li>
+                            <li><a href="{{ route('kemaritiman.list') }}">Kemaritiman</a></li>
                         </ul>
                     </li>
                     <li class="drop-down"><a href="#!">FASILITAS<i class="ion-chevron-down"></i></a>

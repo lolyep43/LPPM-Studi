@@ -29,6 +29,7 @@ class BlogController extends Controller
         return view('blog', compact('post', 'pengumuman', 'slider', 'agenda'));
     }
 
+
     public function isi_blog($slug)
     {
         $post = Posts::latest()->paginate(5);
@@ -118,6 +119,48 @@ class BlogController extends Controller
         $data = Posts::latest()->paginate(10);
         return view('blog.berita.list_post', compact('data', 'post', 'pengumuman', 'agenda'));
     }
+
+    public function list_energi(){
+        $fokus_riset = 'Energi';
+        $post = Posts::latest()->paginate(5);
+        $pengumuman = Pengumuman::latest()->paginate(5);
+        $agenda = Agenda::latest()->paginate(5);
+        $data_hasil_penelitian = HasilPenelitian::where('fokus_riset', $fokus_riset)->latest()->paginate(2);
+        $data_publikasi_ilmiah = PublikasiIlmiah::where('fokus_riset', $fokus_riset)->latest()->paginate(2);
+        return view('blog.fokus_riset.list_energi', compact('data_hasil_penelitian','data_publikasi_ilmiah','post','pengumuman','agenda'));
+    }
+
+    public function list_pertanian_dan_pangan(){
+        $fokus_riset = 'Pertanian dan Pangan';
+        $post = Posts::latest()->paginate(5);
+        $pengumuman = Pengumuman::latest()->paginate(5);
+        $agenda = Agenda::latest()->paginate(5);
+        $data_hasil_penelitian = HasilPenelitian::where('fokus_riset', $fokus_riset)->latest()->paginate(2);
+        $data_publikasi_ilmiah = PublikasiIlmiah::where('fokus_riset', $fokus_riset)->latest()->paginate(2);
+        return view('blog.fokus_riset.list_pertanian_dan_pangan', compact('data_hasil_penelitian','data_publikasi_ilmiah','post','pengumuman','agenda'));
+    }
+
+    public function list_smart_city(){
+        $fokus_riset = 'Smart City';
+        $post = Posts::latest()->paginate(5);
+        $pengumuman = Pengumuman::latest()->paginate(5);
+        $agenda = Agenda::latest()->paginate(5);
+        $data_hasil_penelitian = HasilPenelitian::where('fokus_riset', $fokus_riset)->latest()->paginate(2);
+        $data_publikasi_ilmiah = PublikasiIlmiah::where('fokus_riset', $fokus_riset)->latest()->paginate(2);
+        return view('blog.fokus_riset.list_smart_city', compact('data_hasil_penelitian','data_publikasi_ilmiah','post','pengumuman','agenda'));
+    }
+
+    public function list_kemaritiman(){
+        $fokus_riset = 'Kemaritiman';
+        $post = Posts::latest()->paginate(5);
+        $pengumuman = Pengumuman::latest()->paginate(5);
+        $agenda = Agenda::latest()->paginate(5);
+        $data_hasil_penelitian = HasilPenelitian::where('fokus_riset', $fokus_riset)->latest()->paginate(2);
+        $data_publikasi_ilmiah = PublikasiIlmiah::where('fokus_riset', $fokus_riset)->latest()->paginate(2);
+        return view('blog.fokus_riset.list_kemaritiman', compact('data_hasil_penelitian','data_publikasi_ilmiah','post','pengumuman','agenda'));
+    }
+
+
 
     public function list_pengumuman()
     {
