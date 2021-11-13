@@ -1,12 +1,12 @@
 @extends('blog_layouts.content')
-@section('judul', 'Publikasi Ilmiah - LPPM ITK')
+@section('judul', 'PUBLIKASI ILMIAH - LPPM ITK')
 @section('isi')
 <section style="padding-bottom: 25px;">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-lg-8">
                 <div class="mb-15 p-30 ptb-lg-25 plr-sm-15 card-view">
-                    <h4 class="p-title"><b>Publikasi Ilmiah</b></h4>
+                    <h4 class="p-title"><b>PUBLIKASI ILMIAH</b></h4>
                     @foreach($data as $list_publikasi_ilmiah)
                     <div class="mb-15 sided-250x card-view">
                         <div class="s-left">
@@ -15,8 +15,9 @@
                         <div class="s-right ptb-25 plr-sm-20 pt-sm-20 pb-lg-5 plr-30 plr-xs-0">
                             <h4><a href="{{ route('publikasi-ilmiah.isi', $list_publikasi_ilmiah->slug)}}">{{$list_publikasi_ilmiah->judul}}</a></h4>
                             <ul class="mtb-10 list-li-mr-20 color-lite-black">
-                                <li><i class="mr-5 font-12 ion-android-person"></i>Ketua: {{$list_publikasi_ilmiah->peneliti}}</li><br>
-                                <li><i class="mr-5 font-12 ion-clock"></i>Tahun: {{$list_publikasi_ilmiah->tahun}}</li>
+                                <li><i class="mr-5 font-12 ion-paperclip"></i>Fokus Riset: {{$list_publikasi_ilmiah->fokus_riset}}</li><br>
+                                <li><i class="mr-5 font-12 ion-android-person"></i>Pengarang: {{$list_publikasi_ilmiah->peneliti}}</li><br>
+                                <li><i class="mr-5 font-12 ion-clock"></i>Tahun Terbit: {{$list_publikasi_ilmiah->tahun}}</li>
                             </ul>
                         </div>
                     </div>

@@ -12,6 +12,7 @@
                     <img src="{{ asset($isi_publikasi_ilmiah->foto)}}" alt="">
                     <h3 class="mt-30 mb-5"><a href="#"><b>{{$isi_publikasi_ilmiah->judul}}</b></a></h3>
                     <ul class="list-li-mr-10 color-lite-black">
+                        <li><i class="mr-5 font-12 ion-paperclip"></i>Fokus Riset: {{$isi_publikasi_ilmiah->fokus_riset}}</li><br>
                         <li><i class="mr-5 font-12 ion-android-person"></i>Pengarang: {{$isi_publikasi_ilmiah->peneliti}}</li>
                         <li><i class="mr-5 font-12 ion-clock"></i>Tahun Terbit: {{$isi_publikasi_ilmiah->tahun}}</li>
                     </ul><br>

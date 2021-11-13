@@ -12,6 +12,7 @@
                     <img src="{{ asset($isi_hasil_penelitian->foto)}}" alt="">
                     <h3 class="mt-30 mb-5"><a href="#"><b>{{$isi_hasil_penelitian->judul}}</b></a></h3>
                     <ul class="list-li-mr-10 color-lite-black">
+                        <li><i class="mr-5 font-12 ion-paperclip"></i>Fokus Riset: {{$isi_hasil_penelitian->fokus_riset}}</li><br>
                         <li><i class="mr-5 font-12 ion-android-person"></i>Ketua Peneliti: {{$isi_hasil_penelitian->peneliti}}</li>
                         <li><i class="mr-5 font-12 ion-clock"></i>Tahun Penelitian: {{$isi_hasil_penelitian->tahun}}</li>
                     </ul><br>

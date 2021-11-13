@@ -125,9 +125,11 @@ class BlogController extends Controller
         $post = Posts::latest()->paginate(5);
         $pengumuman = Pengumuman::latest()->paginate(5);
         $agenda = Agenda::latest()->paginate(5);
-        $data_hasil_penelitian = HasilPenelitian::where('fokus_riset', $fokus_riset)->latest()->paginate(2);
-        $data_publikasi_ilmiah = PublikasiIlmiah::where('fokus_riset', $fokus_riset)->latest()->paginate(2);
-        return view('blog.fokus_riset.list_energi', compact('data_hasil_penelitian','data_publikasi_ilmiah','post','pengumuman','agenda'));
+        $jumlah_data_hasil_penelitian = HasilPenelitian::all();
+        $jumlah_data_publikasi_ilmiah = PublikasiIlmiah::all();
+        $data_hasil_penelitian = HasilPenelitian::where('fokus_riset', $fokus_riset)->latest()->paginate(3);
+        $data_publikasi_ilmiah = PublikasiIlmiah::where('fokus_riset', $fokus_riset)->latest()->paginate(3);
+        return view('blog.fokus_riset.list_energi', compact('jumlah_data_hasil_penelitian','jumlah_data_publikasi_ilmiah','data_hasil_penelitian','data_publikasi_ilmiah','post','pengumuman','agenda'));
     }
 
     public function list_pertanian_dan_pangan(){
@@ -135,9 +137,11 @@ class BlogController extends Controller
         $post = Posts::latest()->paginate(5);
         $pengumuman = Pengumuman::latest()->paginate(5);
         $agenda = Agenda::latest()->paginate(5);
-        $data_hasil_penelitian = HasilPenelitian::where('fokus_riset', $fokus_riset)->latest()->paginate(2);
-        $data_publikasi_ilmiah = PublikasiIlmiah::where('fokus_riset', $fokus_riset)->latest()->paginate(2);
-        return view('blog.fokus_riset.list_pertanian_dan_pangan', compact('data_hasil_penelitian','data_publikasi_ilmiah','post','pengumuman','agenda'));
+        $jumlah_data_hasil_penelitian = HasilPenelitian::all();
+        $jumlah_data_publikasi_ilmiah = PublikasiIlmiah::all();
+        $data_hasil_penelitian = HasilPenelitian::where('fokus_riset', $fokus_riset)->latest()->paginate(3);
+        $data_publikasi_ilmiah = PublikasiIlmiah::where('fokus_riset', $fokus_riset)->latest()->paginate(3);
+        return view('blog.fokus_riset.list_pertanian_dan_pangan', compact('jumlah_data_hasil_penelitian','jumlah_data_publikasi_ilmiah','data_hasil_penelitian','data_publikasi_ilmiah','post','pengumuman','agenda'));
     }
 
     public function list_smart_city(){
@@ -145,9 +149,11 @@ class BlogController extends Controller
         $post = Posts::latest()->paginate(5);
         $pengumuman = Pengumuman::latest()->paginate(5);
         $agenda = Agenda::latest()->paginate(5);
-        $data_hasil_penelitian = HasilPenelitian::where('fokus_riset', $fokus_riset)->latest()->paginate(2);
-        $data_publikasi_ilmiah = PublikasiIlmiah::where('fokus_riset', $fokus_riset)->latest()->paginate(2);
-        return view('blog.fokus_riset.list_smart_city', compact('data_hasil_penelitian','data_publikasi_ilmiah','post','pengumuman','agenda'));
+        $jumlah_data_hasil_penelitian = HasilPenelitian::all();
+        $jumlah_data_publikasi_ilmiah = PublikasiIlmiah::all();
+        $data_hasil_penelitian = HasilPenelitian::where('fokus_riset', $fokus_riset)->latest()->paginate(3);
+        $data_publikasi_ilmiah = PublikasiIlmiah::where('fokus_riset', $fokus_riset)->latest()->paginate(3);
+        return view('blog.fokus_riset.list_smart_city', compact('jumlah_data_hasil_penelitian','jumlah_data_publikasi_ilmiah','data_hasil_penelitian','data_publikasi_ilmiah','post','pengumuman','agenda'));
     }
 
     public function list_kemaritiman(){
@@ -155,11 +161,12 @@ class BlogController extends Controller
         $post = Posts::latest()->paginate(5);
         $pengumuman = Pengumuman::latest()->paginate(5);
         $agenda = Agenda::latest()->paginate(5);
-        $data_hasil_penelitian = HasilPenelitian::where('fokus_riset', $fokus_riset)->latest()->paginate(2);
-        $data_publikasi_ilmiah = PublikasiIlmiah::where('fokus_riset', $fokus_riset)->latest()->paginate(2);
-        return view('blog.fokus_riset.list_kemaritiman', compact('data_hasil_penelitian','data_publikasi_ilmiah','post','pengumuman','agenda'));
+        $jumlah_data_hasil_penelitian = HasilPenelitian::all();
+        $jumlah_data_publikasi_ilmiah = PublikasiIlmiah::all();
+        $data_hasil_penelitian = HasilPenelitian::where('fokus_riset', $fokus_riset)->latest()->paginate(3);
+        $data_publikasi_ilmiah = PublikasiIlmiah::where('fokus_riset', $fokus_riset)->latest()->paginate(3);
+        return view('blog.fokus_riset.list_kemaritiman', compact('jumlah_data_hasil_penelitian','jumlah_data_publikasi_ilmiah','data_hasil_penelitian','data_publikasi_ilmiah','post','pengumuman','agenda'));
     }
-
 
 
     public function list_pengumuman()

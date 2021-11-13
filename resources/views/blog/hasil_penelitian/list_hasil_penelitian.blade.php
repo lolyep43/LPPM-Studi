@@ -15,6 +15,7 @@
                         <div class="s-right ptb-25 plr-sm-20 pt-sm-20 pb-lg-5 plr-30 plr-xs-0">
                             <h4><a href="{{ route('hasil-penelitian.isi', $list_hasil_penelitian->slug)}}">{{$list_hasil_penelitian->judul}}</a></h4>
                             <ul class="mtb-10 list-li-mr-20 color-lite-black">
+                                <li><i class="mr-5 font-12 ion-paperclip"></i>Fokus Riset: {{$list_hasil_penelitian->fokus_riset}}</li><br>
                                 <li><i class="mr-5 font-12 ion-android-person"></i>Ketua: {{$list_hasil_penelitian->peneliti}}</li><br>
                                 <li><i class="mr-5 font-12 ion-clock"></i>Tahun: {{$list_hasil_penelitian->tahun}}</li>
                             </ul>
