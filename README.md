@@ -1,5 +1,6 @@
 <p><b>
 Untuk menjalankan program:
+<br>
 1). Install laravel 7 terlebih dahulu 
 <br>
 2). Download kode-nya di github 
@@ -7,6 +8,7 @@ Untuk menjalankan program:
 3). extract kode ke folder yang sudah terinstall laravel 7 
 <br>
 4). Jalankan perintah berikut melalui terminal yang terhubung dengan folder laravel kalian:
+<br>
         composer dump-autoload
         composer install --no-scripts
         composer update
