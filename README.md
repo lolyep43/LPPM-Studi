@@ -1,4 +1,13 @@
-<p><b>Jangan lupa import database terbaru menggunakan lppm.sql untuk menampilkan update terbaru</b></p>
+<p><b>
+Untuk menjalankan program:
+1). Install laravel 7 terlebih dahulu 
+2). Download kode-nya di github 
+3). extract kode ke folder yang sudah terinstall laravel 7 
+4). Jalankan perintah berikut melalui terminal yang terhubung dengan folder laravel kalian:
+        composer dump-autoload
+        composer install --no-scripts
+        composer update
+Jangan lupa import database terbaru menggunakan lppm.sql untuk menampilkan update terbaru</b></p>
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
