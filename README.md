@@ -10,7 +10,9 @@ Untuk menjalankan program:
 4). Jalankan perintah berikut melalui terminal yang terhubung dengan folder laravel kalian:
 <br>
         composer dump-autoload
+        <br>
         composer install --no-scripts
+        <br>
         composer update
  <br>
 Jangan lupa import database terbaru menggunakan lppm.sql untuk menampilkan update terbaru</b></p>
