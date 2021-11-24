@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2021 at 06:41 AM
+-- Generation Time: Nov 24, 2021 at 10:31 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -48,6 +48,51 @@ INSERT INTO `agenda` (`id`, `judul`, `konten`, `tanggal`, `jam`, `slug`, `create
 (17, 'Workshop Business Plan IBT-ITK', '<p>Salam Entrepreneur!!&nbsp;</p>\r\n\r\n<p>Penyusunan rencana bisnis atau / business plan adalah hal penting yang perlu dilakukan sebelum memulai usaha dan untuk mengembangkan suatu usaha yang sudah dijalani. Program hibah dan bantuan pendanaan usaha/entrepreneurship/startup dan sejenisnya pada umumnya akan mempertimbangkan business plan suatu usaha yang diajukan. Business plan yang baik akan mempunyai peluang lebih besar untuk mendapat pendanaan dari pihak pemberi hibah/bantuan modal dan juga investor. Bagi kamu yang tertarik belajar menyusun business plan yang baik, jangan lewatkan workshop berikut.&nbsp;</p>\r\n\r\n<p>Workshop<br />\r\n&quot;Penyusunan Business Plan&quot;</p>\r\n\r\n<p>&nbsp;Narasumber<br />\r\nIndra Purnama S.T., M.T.</p>\r\n\r\n<p>Founder &amp; Direktur PT. Bara Praja Indonesia, Founder &amp; Managing Partner Angel. ID dan A-Incubator, Direktur Eksekutif MIKTI , Start up Advisor, Kadiv Promosi &amp; Kerjasama ABI</p>\r\n\r\n<p>Moderator&nbsp;<br />\r\nDiniar Mungil Kurniawati, S.T., M.T.<br />\r\nManager Inkubator Bisnis Teknologi ITK<br />\r\nSelasa, 16 Maret 2021<br />\r\n09.00 - 12.00 WITA<br />\r\nvia Zoom Meeting</p>\r\n\r\n<p>Free Registration<br />\r\nFree E-Certificate<br />\r\nMateri Workshop</p>\r\n\r\n<p>Link Pendaftaran:<br />\r\nhttp://s.id/RegIBTITK2021</p>\r\n\r\n<p>Contact Person:<br />\r\nwa.me/+6285755197848</p>\r\n\r\n<p>Peserta silakan join grup telegram IBT ITK untuk mendapatkan info kegiatan/program menarik lainnya dari IBT ITK dan info seputar entrepreneur/bisnis lainnya.<br />\r\n<br />\r\nhttps://t.me/joinchat/5YsTU5ijrhQ4NWY1</p>\r\n\r\n<p>------<br />\r\nBest Regards,<br />\r\nTim Pengelola IBT ITK<br />\r\nKampus ITK Karang Joang, Jalan Soekarno Hatta KM.15 Karangjoang, Balikpapan, 76127</p>', '2021-03-16', '09.00 - 12.00', 'workshop-business-plan-ibt-itk', '2021-03-14 22:56:03', '2021-03-14 22:56:03', 'Zoom Conference'),
 (18, 'Seminar Pengabdian Kepada Masyarakat (SEPAKAT) 2021', '<p>Rekan-rekan yth.,<br />\r\nLPPM ITK akan menyelenggarakan Seminar Pengabdian Kepada Masyarakat (SEPAKAT) 2021 pada tanggal 13 Oktober 2021. Paper submission sudah bisa dilakukan melalui laman journal.itk.ac.id</p>\r\n\r\n<p>Untuk info lebih lanjut silakan kunjungi website <a href=\"http://sepakat.itk.ac.id\">https://sepakat.itk.ac.id</a> atau kontak narahubung kami, Diniar (085755197848).</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"http://lppm.itk.ac.id/public/uploads/posts/WhatsApp Video 2021-06-09 at 10.41.39_1623207424.mp4\" /><img alt=\"\" src=\"http://lppm.itk.ac.id/public/uploads/posts/WhatsApp Image 2021-06-09 at 10.43.05_1623207439.jpeg\" style=\"height:990px; width:700px\" /></p>', '2021-10-13', '08.00', 'seminar-pengabdian-kepada-masyarakat-sepakat-2021', '2021-06-08 18:58:03', '2021-06-08 18:59:18', 'Hotel Platinum Kota Balikpapan'),
 (19, 'Workshop Penulisan Buku Ber-ISBN dan Strategi Pendirian ITK Press', '<p><img alt=\"\" src=\"http://lppm.itk.ac.id/public/uploads/posts/Workshop Buku ISBN_1624345398.jpg\" style=\"height:837px; width:600px\" /></p>', '2021-06-23', '08.30', 'workshop-penulisan-buku-ber-isbn-dan-strategi-pendirian-itk-press', '2021-06-21 23:04:08', '2021-06-21 23:05:58', 'Ruang Rapat LPPM');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `buku_ajar`
+--
+
+CREATE TABLE `buku_ajar` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `pengarang` varchar(40) NOT NULL,
+  `judul` varchar(255) NOT NULL,
+  `deskripsi` text NOT NULL,
+  `penerbit` varchar(50) NOT NULL,
+  `gambar` varchar(255) NOT NULL,
+  `tahun` varchar(30) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `slug` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `buku_ajar`
+--
+
+INSERT INTO `buku_ajar` (`id`, `pengarang`, `judul`, `deskripsi`, `penerbit`, `gambar`, `tahun`, `created_at`, `updated_at`, `slug`) VALUES
+(2, 'kufs', 'dsfdsf', '<p>edsfsfd</p>', '', 'public/uploads/buku_ajar/163774379110.png', '2021', '2021-11-24 00:49:51', '2021-11-24 00:49:51', 'dsfdsf'),
+(3, 'asdasd', 'asdasda', '<p>asdasdasd</p>', 'asdasd', 'public/uploads/buku_ajar/163774491310.png', '2121', '2021-11-24 01:08:33', '2021-11-24 01:08:33', 'asdasda');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `deskripsi_fokus_riset`
+--
+
+CREATE TABLE `deskripsi_fokus_riset` (
+  `id` bigint(2) UNSIGNED NOT NULL,
+  `deskripsi` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `deskripsi_fokus_riset`
+--
+
+INSERT INTO `deskripsi_fokus_riset` (`id`, `deskripsi`) VALUES
+(1, 'Ada beberapa tema riset energi yang pertama Teknologi subtitusi bahan bakar yang berasal dari bahan lokal yang low emisi, topik risetnya :Teknologi Produksi Bahan Bakar Bioenergi (Biodiesel, Bioethanol, Biohidrogen, Bricket, Biometan), Teknologi Produksi ');
 
 -- --------------------------------------------------------
 
@@ -166,7 +211,9 @@ CREATE TABLE `hasil_penelitian` (
 INSERT INTO `hasil_penelitian` (`id`, `peneliti`, `judul`, `fokus_riset`, `deskripsi`, `manfaat`, `foto`, `tahun`, `created_at`, `updated_at`, `slug`) VALUES
 (12, 'Inggit Kresna Maharsih, S. T., M.Sc.', 'PENGARUH EDIBLE COATING TERHADAP DAYA SIMPAN BUAH NANAS (Ananas comosus L.) POTONG', 'Energi', '<p>Nanas (Ananas comosus L.) adalah salah satu komoditas buah unggulan di Indonesia. Berdasarkan informasi dari Pusat Data dan Informasi Kementerian Pertanian, ekspor buah nanas mengalami peningkatan dari tahun ke tahun. Pada tahun 2013, Indonesia mengekspor buah nanas sebesar 174 ribu ton. Nilai ini meningkat menjadi 229 ribu ton pada tahun 2018. Tantangan utama dalam ekspor buah segar adalah menjaga kualitas buah tersebut agar tetap baik ketika tiba di negara tujuan. Dalam hal ini, buah nanas termasuk sangat sensitif dan mudah mengalami penurunan kualitas. Ketika buah nanas disimpan dalam suhu ruang, periode penyimpanannya secara umum cukup singkat, yaitu sekitar 7-10 hari. Salah satu cara untuk mencegah atau memperlambat fenomena tersebut adalah dengan pengemasan yang tepat. Bahan pengemas dari plastik banyak digunakan dengan pertimbangan ekonomis dan memberikan perlindungan yang baik dalam pengawetan. Namun, penggunaan material berbasis minyak alam tersebut menyebabkan pencemaran lingkungan, karena rantai karbon yang panjang membuat plastik membutuhkan waktu yang lama untuk diuraikan oleh mikroorganisme. Oleh sebab itu, dibutuhkan penelitian mengenai bahan pengemas yang dapat diuraikan, sehingga lebih ramah lingkungan. Salah satu alternatif penggunaan kemasan yang dapat diuraikan adalah dengan menggunakan edible coating. Pada penelitian ini, terdapat dua jenis bahan utama yang akan dijadikan edible coating pada buah nanas potong, yaitu pati dari kulit singkong dan kitosan. Pada proses pembuatan edible coating, terdapat &nbsp;penambahan gliserol sebagai plasticizer. Sementara itu, metode yang digunakan dalam pembuatan edible coating yakni metode dip coating. Hasil menunjukkan bahwa pada Variabel D dengan komposisi campuran 5 %w/v pati, 0,6 ml/gr gliserol, dan larutan kitosan 1% w/v di dalam asam askorbat memiliki kelarutan sebesar 58,45% di dalam air. Selain itu, buah nanas potong yang terlapisi masih tetap segar di hari ke-14, dengan kenaikan pH sebesar 18% dalam 14 hari. Hasil ini sebanding dengan hasil uji organoleptik. Buah nanas segar potong yang dilapisi edible coating Variabel D memperoleh total penerimaan tertinggi, yaitu sebesar 5,47.</p>', '<ol>\r\n	<li>Memberikan informasi tentang proses ekstraksi pati dari kulit singkong.</li>\r\n	<li>Memberikan informasi terkait proses pembuatan larutan edible coating untuk buah segar potong.</li>\r\n	<li>Menyajikan informasi tentang daya simpan buah nanas segar potong yang telah dilapisi oleh edible coating.</li>\r\n</ol>', 'public/uploads/hasil-penelitian/1612352737edible coating.png', '2020', '2021-02-03 03:45:37', '2021-11-11 18:10:18', 'pengaruh-edible-coating-terhadap-daya-simpan-buah-nanas-ananas-comosus-l-potong'),
 (14, '1.	Dr. Eng. Lusi Ernawati, S.T., M. Sc. (Teknik Kimia/JTIP/ITK) 2.	Andromeda Dwi Laksono, S.T., M.Sc., (Teknik Material/JIKL/ITK) 3.	Dr. Andriati Ningrum, S.T.P., M.Agr (Teknologi Pangan dan Hasil Pertanian/FTP/UGM)', '“Wollastonite (CaSiO3) Berbahan Dasar Limbah Biomass Sebagai Anticaking Agent Pada Olahan Tepung”', 'Energi', '<p>Zat antikempal (<em>Anticaking Agent</em>) adalah bahan tambahan makanan yang dapat mencegah mengempalnya/menggumpalnya makanan yang berupa serbuk, tepung, atau bubuk. Bahan Tambahan Pangan (BTP) ini biasanya ditambahkan pada makanan yang berbentuk serbuk, misalnya gula, &nbsp;garam atau merica bubuk dan bumbu lainnya, agar makanan tersebut tidak mengempal dan mudah dituang dari wadahnya. Penambahan anti kempal bertujuan untuk mencegah terjadinya penggumpalan dan menjaga agar bahan tersebut dapat dituang (free flowing). &nbsp;Selain itu <em>Anticaking Agent</em> juga merupakan senyawa anhidrat yang mampu mengikat air tanpa menjadi basah dan biasanya ditambahkan ke dalam bahan makanan yang bersifat bubuk atau partikulat seperti garam. Berdasarkan Peraturan Menteri Kesehatan RI No. 722/Menkes/Per/IX/88 tentang BTP, <em>Anticaking Agent</em> merupakan jenis BTP yang dapat mencegah mengempalnya makanan yang berupa serbuk, tepung, atau bubuk. BTP ini biasanya ditambahkan pada makanan yang berbentuk serbuk, misalnya garam meja/merica bubuk dan bumbu lainnya, agar makanan tersebut tidak mengempal dan mudah dituang dari wadahnya. Contoh <em>Anticaking Agent</em> adalah Mg2CO3, SiO2, Al2SiO3, MgO, yang dipakai sebagai anti kempal pada garam meja, merica, dan rempah atau bumbu lainnya. Contoh lain garam-garam stearate dan tri kalsium fosfat pada gula kaldu dan susu bubuk.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Salah satu jenis zat antikempal (<em>anticaking agent</em>) yang tidak disebutkan diatas adalah <em>kalsium silikat </em>atau dikenal dengan istilah<em> Wollastonite</em> dengan rumus senyawa CaSiO3. Wollastonite (CaSiO3) adalah salah satu senyawa anticaking agent yang dapat digunakan untuk mencegah pergerakan kue soida dengan konsentrasi 5% atau mencegah pergerakan garam dengan konsentrasi 2%. Selain itu material ini juga efektif menyerap minyak dan senyawa organic non-polar lainnya. Senyawa Anticaking agent ini biasanya dipakai dalam campuran tepung maupun rempah yang mengandung minyak atsiri. <em>Secara komersial</em>, CaSiO3.dibuat dari gamping dan tanah diatom pada kondisi yang sangat terkontrol. Sebagai <em>anticaking agent</em> yang efektif, silikat terhidrat harus diendapkan dan dikeringkan untuk memastikan material aktif yang akan menarik uap air. Sejauh ini pemanfaatan <em>Wollastonite</em> masih terbatas penggunaanya dalam bidang farmasi yakni sebagai antacid dan bahan fiksasi pada perawatan bedah tulang di bidang kedokteran gigi. Sedangkan <em>Wollastonite</em> yang berbahan dasar alami yang diaplikasikan sebagai <em>anticaking agent</em> pada olahan tepung <strong>belum banyak dikembangkan</strong>.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Sekam padi merupakan bagian terluar butir padi yang merupakan salah satu limbah pengolahan padi selain jerami dan bekatul yang cukup melimpah di Indonesia serta abunya memiliki kandungan silika yang tinggi. Abu sekam padi memiliki kandungan silika tinggi sekitar 89-97%. Tingginya kandungan silika dalam abu sekam padi dapat dijadikan acuan untuk memanfaatkan abu sekam padi sebagai bahan pembuatan material berbasis silika seperti silika gel. Demikian hal nya limbah cangkang telur ayam sebagai sumber kalsium (Ca) karena cangkang telur mengandung 94-97 % CaCO3. Selain itu, karena ketersediannya sangat melimpah serta harganya yang sangat murah, akan tetapi kurang dimanfaatkan potensinya.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Berdasarkan latar belakang yang telah diuraikan, tim peneliti melakukan penelitian yang bertujuan untuk mensintesa <em>wollastonite </em>(CaSiO3) berbahan dasar limbah biomass yakni sikika (SiO2) dari abu limbah sekam padi dan Calcium Carbonate (CaCO3) dari cangkang telur ayam menggunakan Teknik reaksi padatan dan sonokimia. Selanjutnya hasil sintesa material <em>Wollastonite</em> (CaSiO3) diaplikasikan sebagai <em>anticaking agent </em>pada produk olahan tepung dan mendapatkan karakteristik olahan tepung selama penyimpanan berdasarkan kurva sorpsi isothermis. Tahapan penelitian ini dimulai dengan pencucian limbah sekam padi, dilanjutkan dengan proses pengabuan menggunakan furnace pada suhu 900&deg;C selama 2,5 jam. Kemudian dilakukan penambahan sodium hidroksida (NaOH 1 M) pada suhu 110&deg;C selama 4 jam, dilanjutkan dengan proses pnyaringan untuk mendapatkan filtrat larutan sodium silikat. Hasil sodium silikat kemudian dititrasi dengan HCl hingga membentuk gel SiO2, dan dikeringkan, dilakukan penggerusan dan pengayakan. Sedangkan pembuatan CaCO3 dari limbah cangkang telur dengan suhu kalsinasi 800 oC selama 1 jam. Selanjutnya tahap sintesa <em>Wollastonite </em>(CaSiO3) dilakukan dengan teknik reaksi padatan dan sonokimia dengan mencampurkan dua material CaCO3 dan SiO2 dalam larutan etanol pada komposisi tertentu. Tahap terakhir adalah mengaplikasikan <em>Wollastonite (CaSiO3)</em> sebagai bahan anticaking agent pada olahan tepung (kristal gula) serta mengamati fenomena selama penyimpanan untuk mendapatkan kurva sorpsi isotermisnya. Tim peneliti berharap bahwa bentuk pengembangan material <em>wollastonite</em> ini dapat digunakan sebagai zat antikempal yang mampu mengindetifikasi derajat kekempalan olahan tepung dan makanan berbasis serbuk, serta mengkaji potensi pengembangannya dalam hal ketersediaan sumber bahan pangan dari sumber daya lokal, pemberdayaan masyarakat, promosi, dan usaha ekonomi produktif dalam upaya kemandirian pangan di provinsi Kalimantan Timur khususnya dalam menunjang ketahanan pangan yang berkelanjutan.</p>\r\n\r\n<p><strong>Luaran Penelitian:</strong></p>\r\n\r\n<p>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; L. Ernawati, R. A. Wahyuono, A. D. Laksono, A. Ningrum, K. Handayani, A. Sabrina<em>. Wollastonite (CaSiO3)-based Composite Particles for Synthetic Food Dyes (Brilliant Blue) Removal in Aquatic Media: Synthesis, Characterization and Kinetic study. </em><strong>2021</strong><em>. <strong>IOP Publishing Conf. Series: Materials Science and Engineering</strong>, 1053 (2021) 012001. 4th International Conference on Chemical and Material Engineering (ICCME) 2020. doi:10.1088/1757-899X/1053/1/012001.</em></p>\r\n\r\n<p>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Poster Ilmiah dengan judul: <em>Preparation and Characterization of Wollastonite (CaSiO3) Composite Particles from Eggshells and Its Potential for Anticaking Agent.</em></p>\r\n\r\n<p><strong>Daftar Pustaka:</strong></p>\r\n\r\n<p>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>[BPOM] Badan Pengawasan Obat dan Makanan. <strong>2013.</strong> Batas Maksimum Penggunaan Bahan Tambahan Pangan Antikempal. Jakarta (ID): BPOM.</em></p>\r\n\r\n<p>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>Houston, D.F. (1972). Rice Chemistry and Technology. Minnesota: American Association Chemist, Inc</em></p>\r\n\r\n<p>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>Chen, Chun-Cheng, Ho, Chia-Che, Lin, Shao-Yung, Ding, Shinn-Jyh. <strong>2015</strong>. Green synthesis of calcium silicate bioceramic powders. Ceramics International. 41.</em></p>\r\n\r\n<p>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>Sudiarta, I.W., Ni Putu Diantariani, Putu Suarya, Modifikasi Silika Gel Dari Abu Sekam Padi Dengan Ligan Difenilkarbazon, Jurnal Kimia, <strong>2013</strong>:7(1):57-63.</em></p>\r\n\r\n<p>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>Fahmi, H., Abdul Latif Nurfalah, Analisa Daya Serap Silika Gel Berbahan Dasar Abu Sekam Padi, Jurnal Ipteks Terapan Research of Applied Science and Education, <strong>2016</strong>:10(3):176-182.</em></p>\r\n\r\n<p>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>S. Vichaphund, P. Thavorniti P. Synthesis wollastonite from eggshell waste. Patent Application No. 1001000306, Thailand, <strong>2010</strong>.</em></p>\r\n\r\n<p><em>R.G. Carrodeguas, A.H. De Aza, P.N. De Aza, J. Baud&iacute;n Jim&eacute;nez, A. L&oacute;pez-Bravo. A. P. Pena. &nbsp;Assessment of natural and synthetic wollastonite as source for bioceramics preparation. J. Biomed. Mater. Res. 83,<strong> 2007</strong>, 484-95</em></p>\r\n\r\n<p>&nbsp;</p>', '<p>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Memahami metode sintesa dan mengetahui mikrostruktur, struktur kristal, gugus fungsi dan sifat termal pembuatan material <em>Wollastonite</em> menggunakan bahan dasar dari limbah cangkang telur ayam dan limbah sekam padi.</p>\r\n\r\n<p>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Menjadi bahan acuan bagi penelitian berikutnya yang ingin meneruskan mengenai pembuatan bahan dasar <em>Wollastonite </em>dari bahan baku cangkang telur ayam dan limbah sekam padi dengan perlakuan yang berbeda.</p>\r\n\r\n<p>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hasil penelitian ini dapat digunakan sebagai alternatif dalam pemilihan bahan dasar untuk pembuatan <em>Wollastonite</em> (CaSiO3).</p>\r\n\r\n<p>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mengetahui aplikasi Bahan Tambahan Pangan (BTP) <em>Wollastonite</em> sebagai anticaking Agent pada olahan tepung.</p>', 'public/uploads/hasil-penelitian/16170939612.png', '2019-2020', '2021-03-14 17:18:30', '2021-11-10 23:21:47', 'wollastonite-casio3-berbahan-dasar-limbah-biomass-sebagai-anticaking-agent-pada-olahan-tepung'),
-(15, 'Kuda', 'Terbang', 'Energi', '<p>Anjay</p>', '<p>Gak tahu</p>', 'public/uploads/hasil-penelitian/163661415974990601-4c0c-4cc7-bda0-32df5c9abcb5_169.jpg', '1999', '2021-11-10 23:02:39', '2021-11-11 18:10:22', 'terbang');
+(15, 'Kuda', 'Terbang', 'Pangan dan Pertanian', '<p>Anjay</p>', '<p>Gak tahu</p>', 'public/uploads/hasil-penelitian/163661415974990601-4c0c-4cc7-bda0-32df5c9abcb5_169.jpg', '1999', '2021-11-10 23:02:39', '2021-11-23 01:38:43', 'terbang'),
+(17, 's', 'd', 'Pangan dan Pertanian', '<p>ab</p>', '<p>sa</p>', 'public/uploads/hasil-penelitian/163679358974990601-4c0c-4cc7-bda0-32df5c9abcb5_169.jpg', 'ds', '2021-11-13 00:53:09', '2021-11-23 01:39:24', 'd'),
+(18, 'as', 'sda', 'Energi', '<p>asdasdasd</p>', 'asdasda', 'public/uploads/hasil-penelitian/163774483010.png', 'ssd', '2021-11-24 01:07:10', '2021-11-24 01:07:10', 'sda');
 
 -- --------------------------------------------------------
 
@@ -465,6 +512,13 @@ CREATE TABLE `publikasi_ilmiah` (
   `slug` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `publikasi_ilmiah`
+--
+
+INSERT INTO `publikasi_ilmiah` (`id`, `peneliti`, `judul`, `fokus_riset`, `deskripsi`, `manfaat`, `foto`, `tahun`, `created_at`, `updated_at`, `slug`) VALUES
+(2, 'ab', 'c', 'Energi', '<p>a</p>', 'b', 'public/uploads/publikasi-ilmiah/1636780928download.jpeg', '333', '2021-11-12 21:22:08', '2021-11-12 21:22:08', 'c');
+
 -- --------------------------------------------------------
 
 --
@@ -535,6 +589,18 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 -- Indexes for table `agenda`
 --
 ALTER TABLE `agenda`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `buku_ajar`
+--
+ALTER TABLE `buku_ajar`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `deskripsi_fokus_riset`
+--
+ALTER TABLE `deskripsi_fokus_riset`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -645,6 +711,18 @@ ALTER TABLE `agenda`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
+-- AUTO_INCREMENT for table `buku_ajar`
+--
+ALTER TABLE `buku_ajar`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `deskripsi_fokus_riset`
+--
+ALTER TABLE `deskripsi_fokus_riset`
+  MODIFY `id` bigint(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `dokumen`
 --
 ALTER TABLE `dokumen`
@@ -666,7 +744,7 @@ ALTER TABLE `halaman`
 -- AUTO_INCREMENT for table `hasil_penelitian`
 --
 ALTER TABLE `hasil_penelitian`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `hasil_pengabdian`
@@ -708,13 +786,13 @@ ALTER TABLE `pengumuman`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT for table `publikasi_ilmiah`
 --
 ALTER TABLE `publikasi_ilmiah`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `sliders`
