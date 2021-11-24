@@ -41,9 +41,7 @@
                         </div>
                     </div>
                     @endforeach
-                    @if($jumlah_data_publikasi_ilmiah->count() > 3)
                     <h6><a class="mt-15 plr-20 btn-b-lg btn-fill-primary dplay-block mlr-auto" href="{{ route('publikasi-ilmiah.list')}}"><b>Lihat Seluruh Publikasi Ilmiah</b></a></h6>
-                    @endif
                 </div> 
             </div>
             <div class="col-md-12 col-lg-4">

@@ -22,9 +22,7 @@
                         </div>
                     </div>
                     @endforeach
-                    @if($jumlah_data_hasil_penelitian->count() > 3)
                     <h6><a class="mt-15 plr-20 btn-b-lg btn-fill-primary dplay-block mlr-auto" href="{{ route('hasil-penelitian.list')}}"><b>Lihat Seluruh Hasil Penelitian</b></a></h6>
-                    @endif
                     <br>
                 </div>
                 <div class="mb-15 p-30 ptb-lg-25 plr-sm-15 card-view">
