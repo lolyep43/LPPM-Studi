@@ -21,6 +21,6 @@ class CheckRole
             }
         }
     
-        return redirect('/');
+        return abort(500);
     }
 }

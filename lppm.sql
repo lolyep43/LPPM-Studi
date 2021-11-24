@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2021 at 10:31 AM
+-- Generation Time: Nov 24, 2021 at 04:00 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -565,7 +565,9 @@ CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `role` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password_asli` varchar(18) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -576,10 +578,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@lppm.itk.ac.id', NULL, '$2a$12$ZhfiVcGPksO4iuu5Y7Ne6eXMv.DlcBx2tZD9.0n6MtWOqof7HXV36', NULL, '2020-08-01 19:33:46', '2020-08-01 19:33:46'),
-(2, 'Udin', 'udin@gamboet.itk.ac.id', NULL, '$2y$10$ckqP63kUWN7rJt6BAk1SsemOxmNioYDG1B/L0xJFKz5pFbZpw0lsW', NULL, '2021-11-09 03:05:24', '2021-11-09 03:26:20'),
-(4, 'cuke', 'naruto@cuke.cuke.cuke', NULL, '$2y$10$SW8QpYmDLZXUEzCW2GNMCO84qgGm6aeYeB8K7fPyWd/RITPJQq08S', NULL, '2021-11-09 05:18:25', '2021-11-09 05:18:25');
+INSERT INTO `users` (`id`, `name`, `email`, `role`, `email_verified_at`, `password_asli`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Admin', 'admin@lppm.itk.ac.id', 'Super Admin', NULL, '', '$2y$10$0EriGHgxpuU5wbBJkRSP1uEEAg6RA/xPnA/kPH02afsIf51v8YDCG', NULL, '2020-08-01 19:33:46', '2021-11-24 06:33:24'),
+(2, 'Udin', 'udin@gamboet.itk.ac.id', 'Super Admin', NULL, '', '$2y$10$ryqnRszweMjlmMWvJi5kz.yAQNsrld7SI129cWyGRCK1S1/q0JvAm', NULL, '2021-11-09 03:05:24', '2021-11-24 06:44:23'),
+(4, 'cuke', 'naruto@cuke.cuke.cuke', 'Admin', NULL, '', '$2y$10$dfg59mLDMeylfoHh3bTT3eAARLv8IVA93s/2CHT1WvfbWZcVr//SK', NULL, '2021-11-09 05:18:25', '2021-11-24 06:55:34'),
+(5, 'test1', 'test1@lppm.itk.ac.id', 'Super Admin', NULL, '123123', '$2y$10$cpYwmbOamkuFL8CDpZBLguWYRAJTVyAMIYRDFzxTvewwUpOjWT636', NULL, '2021-11-24 06:59:27', '2021-11-24 06:59:27');
 
 --
 -- Indexes for dumped tables
@@ -810,7 +813,7 @@ ALTER TABLE `struktur_organisasi`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
