@@ -30,6 +30,12 @@
                             <div class="position-relative form-group"><label>Nama</label><input name="name" type="text" class="form-control" value="{{ $User->name }}"></div>
                             <div class="position-relative form-group"><label>Email</label><input name="email" type="text" class="form-control" value="{{ $User->email }}"></div>
                             <div class="position-relative form-group"><label>Password</label><input name="password" type="text" class="form-control"value="{{ $User->password }}"></div>
+                            <div class="position-relative form-group"><label>Role</label>
+                                <select name="role" class="form-control">
+                                    <option {{ $User->role == 'Super Admin' ? "selected" : "" }} value="Super Admin">Super Admin</option>
+                                    <option {{ $User->role == 'Admin' ? "selected" : "" }} value="Admin">Admin</option>
+                                </select>
+                            </div>
                     </div>
                     <div class="col-md-4">
                         <button class="mt-1 btn btn-primary" style="float:right">Update</button>

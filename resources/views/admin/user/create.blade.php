@@ -28,6 +28,12 @@
                             @csrf
                             <div class="position-relative form-group"><label>Nama</label><input name="name" type="text" class="form-control"></div>
                             <div class="position-relative form-group"><label>Email</label><input name="email" type="text" class="form-control"></div>
+                            <div class="position-relative form-group"><label>Role</label>
+                                <select name="role" class="form-control">
+                                    <option value="Super Admin">Super Admin</option>
+                                    <option value="Admin">Admin</option>
+                                </select>
+                            </div>
                             <div class="position-relative form-group"><label>Password</label><input name="password" type="text" class="form-control"></div>
                             <button class="mt-1 btn btn-primary" style="float:right">Tambah</button>
                     </div>

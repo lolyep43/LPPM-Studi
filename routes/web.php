@@ -52,6 +52,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/galeri', 'GaleriController');
     Route::resource('/laboratorium', 'LaboratoriumController');
     Route::resource('/halaman', 'HalamanController');
-    Route::resource('/User', 'UserController');
+    Route::resource('/User', 'UserController')->middleware('checkRole:Super Admin');
     Route::post('/images', 'PostController@uploadImage')->name('post.image');
 });

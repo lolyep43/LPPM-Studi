@@ -23,7 +23,8 @@
                             <th>#</th>
                             <th>Nama</th>
                             <th>Email</th>
-                            <th width="17%">Aksi</th>
+                            <th width="17%">Role</th>
+                            <th>Aksi<th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,12 +33,13 @@
                             <th scope="row">{{ $loop->iteration }}</th>
                             <td>{{ $hasil->name}}</td>
                             <td>{{ $hasil->email}}</td>
+                            <td>{{ $hasil->role}}</td>
                             <td>
                                 <form action="{{ route('User.destroy', $hasil->id) }}" method="POST">
                                     @csrf
                                     @method('delete')
                                     <a href="{{ route('User.edit', $hasil->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus user ini?');">Hapus</button>
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus {{ $hasil->name}}?');">Hapus</button>
                                 </form>
                             </td>
                         </tr>

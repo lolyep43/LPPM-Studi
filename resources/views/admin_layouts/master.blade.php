@@ -472,6 +472,7 @@
                                     <i class="metismenu-icon pe-7s-display2"></i>
                                     Halaman
                                 </a>
+                            @can('super-admin')
                             </li>
                             <li class="app-sidebar__heading">Tambah Akun</li>
                             <li>
@@ -480,6 +481,7 @@
                                     Buat Akun
                                 </a>
                             </li>
+                            @endcan
                         </ul>
                     </div>
                 </div>
