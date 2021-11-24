@@ -17,17 +17,17 @@
 </div>
 @endif
 
-<h1>Tambah Berita</h1><br>
+<h1>Tambah Buku AjAR</h1><br>
 <div class="row">
     <div class="col-lg-12">
         <div class="main-card mb-3 card">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-8">
-                        <form class="" action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
+                        <form class="" action="{{ route('buku-ajar.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="position-relative form-group"><label>Judul</label><input name="judul" type="text" class="form-control"></div>
-                            <div class="position-relative form-group"><label>Isi</label><textarea name="konten" class="form-control" id="konten"></textarea></div>
+                            <div class="position-relative form-group"><label>Deskripsi</label><textarea name="konten" class="form-control" id="konten"></textarea></div>
                     </div>
 
                     <div class="col-md-4">
@@ -49,7 +49,9 @@
     CKEDITOR.replace('konten', {
         filebrowserUploadUrl: "{{route('post.image', ['_token' => csrf_token() ])}}",
         filebrowserUploadMethod: 'form',
-        height: 1000
+        height: 1000,
+
+        removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar,Print,NewPage,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TexField,Textarea,Select,Button,ImageButton,HiddenField,RemoveFormat,Outdent,Indent,BidiLtr,BidiRtl,CreatePlaceHolder,CreateDiv,Iframe,Smiley,Preview,Save'
     });
 </script>
 

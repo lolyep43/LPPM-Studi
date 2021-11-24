@@ -43,9 +43,8 @@
                         </div>
                     </div>
                     @endforeach
-                    @if($jumlah_data_publikasi_ilmiah->count() > 3)
-                    <h6><a class="mt-15 plr-20 btn-b-lg btn-fill-primary dplay-block mlr-auto" href="{{ route('publikasi-ilmiah.list')}}"><b>Lihat Seluruh Publikasi Ilmiah</b></a></h6>
-                    @endif
+                    <h6><a class="mt-15 plr-20 btn-b-lg btn-fill-primary dplay-block mlr-auto" href="{{ route('hasil-penelitian.list')}}"><b>Lihat Seluruh Hasil Penelitian</b></a></h6>
+                    <br>
                 </div> 
             </div>
             <div class="col-md-12 col-lg-4">
@@ -85,9 +84,8 @@
                         @foreach($agenda as $hasil_agenda)
                         <div class="detail-calendar-grey">
                             <div class="calendar-grey">
-                                <h3><b>{{Carbon\Carbon::parse($hasil_agenda->tanggal)->isoFormat('D')}}</b></h3>
-                                <h4>{{Carbon\Carbon::parse($hasil_agenda->tanggal)->isoFormat('MMM')}}</h4>
-                            </div>
+                                <h3><b>{{$hasil_agenda->tanggal->isoFormat('D')}}</b></h3>
+                                <h4>{{$hasil_agenda->tanggal->isoFormat('MMM')}}</h4>
                             <div class="calendar-contain-grey">
                                 <div class="calendar-contain-description-grey">
                                     <a href="{{ route('agenda.isi', $hasil_agenda->slug)}}" title="{{$hasil_agenda->judul}}”"><b>{{$hasil_agenda->judul}}</b></a>

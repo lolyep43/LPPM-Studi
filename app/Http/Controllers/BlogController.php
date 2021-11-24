@@ -15,6 +15,7 @@ use App\Laboratorium;
 use App\InovasiMandiri;
 use App\InovasiIndustri;
 use App\Halaman;
+use App\BukuAjar;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -75,6 +76,15 @@ class BlogController extends Controller
         return view('blog.hasil_pengabdian.detail_hasil_pengabdian', compact('data', 'post', 'pengumuman', 'agenda'));
     }
 
+    public function isi_buku_ajar($slug)
+    {
+        $post = Posts::latest()->paginate(5);
+        $pengumuman = Pengumuman::latest()->paginate(5);
+        $agenda = Agenda::latest()->paginate(5);
+        $data = BukuAjar::where('slug', $slug)->get();
+        return view('blog.buku_ajar.detail_buku_ajar', compact('data', 'post', 'pengumuman', 'agenda'));
+    }
+
     public function isi_publikasi_ilmiah($slug)
     {
         $post = Posts::latest()->paginate(5);
@@ -133,7 +143,7 @@ class BlogController extends Controller
     }
 
     public function list_pertanian_dan_pangan(){
-        $fokus_riset = 'Pertanian dan Pangan';
+        $fokus_riset = 'Pangan dan Pertanian';
         $post = Posts::latest()->paginate(5);
         $pengumuman = Pengumuman::latest()->paginate(5);
         $agenda = Agenda::latest()->paginate(5);
@@ -203,6 +213,15 @@ class BlogController extends Controller
         $agenda = Agenda::latest()->paginate(5);
         $data = HasilPengabdian::latest()->paginate(10);
         return view('blog.hasil_pengabdian.list_hasil_pengabdian', compact('data', 'post', 'pengumuman', 'agenda'));
+    }
+
+    public function list_buku_ajar()
+    {
+        $post = Posts::latest()->paginate(5);
+        $pengumuman = Pengumuman::latest()->paginate(5);
+        $agenda = Agenda::latest()->paginate(5);
+        $data = BukuAjar::latest()->paginate(10);
+        return view('blog.buku_ajar.list_buku_ajar', compact('data', 'post', 'pengumuman', 'agenda'));
     }
 
     public function list_publikasi_ilmiah()

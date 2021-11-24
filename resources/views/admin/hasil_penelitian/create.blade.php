@@ -58,11 +58,18 @@
 
 <script src="https://cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
 <script>
-   CKEDITOR.replace('konten', {
+    CKEDITOR.replace('konten', {
         filebrowserUploadUrl: "{{route('post.image', ['_token' => csrf_token() ])}}",
         filebrowserUploadMethod: 'form',
-        height: 500
+        height: 500,
+		removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar,Print,NewPage,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TexField,Textarea,Select,Button,ImageButton,HiddenField,RemoveFormat,Outdent,Indent,BidiLtr,BidiRtl,CreatePlaceHolder,CreateDiv,Iframe,Smiley,Preview,Save'
+
+
     });
+
+    // CKEDITOR.editorConfig = function
+
+
 </script>
 
 @endsection

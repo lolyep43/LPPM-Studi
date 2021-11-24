@@ -11,7 +11,7 @@
                     @foreach($data as $isi_agenda)
                     <h3 class="mt-5 mb-5"><a href="#"><b>{{$isi_agenda->judul}}</b></a></h3>
                     <ul class="list-li-mr-10 color-lite-black">
-                        <li><i class="mr-5 font-12 ion-clock"></i>{{Carbon\Carbon::parse($isi_agenda->tanggal)->isoFormat('D MMMM Y')}}</li>
+                        <li><i class="mr-5 font-12 ion-clock"></i>{{$isi_agenda->tanggal->isoFormat('D MMMM Y')}}</li>
                         <li><i class="mr-5 font-12 ion-clock"></i>{{$isi_agenda->jam}}</li>
                         <li><i class="mr-5 font-12 ion-clock"></i>{{$isi_agenda->tempat}}</li>
                     </ul><br>
@@ -56,8 +56,8 @@
                         @foreach($agenda as $hasil_agenda)
                         <div class="detail-calendar-grey">
                             <div class="calendar-grey">
-                                <h3><b>{{Carbon\Carbon::parse($hasil_agenda->tanggal)->isoFormat('D')}}</b></h3>
-                                <h4>{{Carbon\Carbon::parse($hasil_agenda->tanggal)->isoFormat('MMM')}}</h4>
+                                <h3><b>{{$hasil_agenda->tanggal->isoFormat('D')}}</b></h3>
+                                <h4>{{$hasil_agenda->tanggal->isoFormat('MMM')}}</h4>
                             </div>
                             <div class="calendar-contain-grey">
                                 <div class="calendar-contain-description-grey">

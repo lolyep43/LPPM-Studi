@@ -82,7 +82,7 @@
                         <ul class="drop-down-menu drop-down-inner">
                             <li><a href="{{ route('hasil-penelitian.list') }}">Hasil Penelitian</a></li>
                             <li><a href="{{ route('hasil-pengabdian.list') }}">Hasil Pengabdian</a></li>
-                            <li><a href="/detail-halaman/buku-ajar">Buku Ajar</a></li>
+                            <li><a href="{{ route('buku-ajar.list') }}">Buku Ajar</a></li>
                             <li><a href="{{ route('publikasi-ilmiah.list') }}">Publikasi Ilmiah</a></li>
                         </ul>
                     </li>

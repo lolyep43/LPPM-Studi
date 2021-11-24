@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-12 col-lg-8">
                 <div class="mb-30 p-30 ptb-lg-25 plr-sm-15 card-view">
-                    <h4 class="p-title"><b>HASIL PENELITIAN</b></h4>
+                    <h4 class="p-title"><b>LABORATORIUM</b></h4>
                     @foreach($data as $list_laboratorium)
                     <div class="mb-15 sided-250x card-view">
                         <div class="s-left">
@@ -59,8 +59,8 @@
                         @foreach($agenda as $hasil_agenda)
                         <div class="detail-calendar-grey">
                             <div class="calendar-grey">
-                                <h3><b>{{Carbon\Carbon::parse($hasil_agenda->tanggal)->isoFormat('D')}}</b></h3>
-                                <h4>{{Carbon\Carbon::parse($hasil_agenda->tanggal)->isoFormat('MMM')}}</h4>
+                                <h3><b>{{$hasil_agenda->tanggal->isoFormat('D')}}</b></h3>
+                                <h4>{{$hasil_agenda->tanggal->isoFormat('MMM')}}</h4>
                             </div>
                             <div class="calendar-contain-grey">
                                 <div class="calendar-contain-description-grey">

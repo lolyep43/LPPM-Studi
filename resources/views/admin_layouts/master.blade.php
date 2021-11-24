@@ -445,6 +445,7 @@
                                 <ul class="drop-down-menu drop-down-inner">
                                     <li><a href="{{ route('hasil-penelitian.index') }}">Hasil Penelitian</a></li>
                                     <li><a href="{{ route('hasil-pengabdian.index') }}">Hasil Pengabdian</a></li>
+                                    <li><a href="{{ route('buku-ajar.index') }}">Buku Ajar</a></li>
                                     <li><a href="{{ route('publikasi-ilmiah.index') }}">Publikasi Ilmiah</a></li>
                                 </ul>
                             </li>

@@ -1,6 +1,6 @@
 @extends('blog_layouts.content')
-@foreach($data as $isi_inovasi_industri)
-@section('judul', $isi_inovasi_industri->judul. ' - LPPM ITK')
+@foreach($data as $isi_buku_ajar)
+@section('judul', $isi_buku_ajar->judul. ' - LPPM ITK')
 @endforeach
 @section('isi')
 <section style="padding-bottom: 25px;">
@@ -8,27 +8,30 @@
 		<div class="row">
 			<div class="col-md-12 col-lg-8">
 				<div class="p-30 mb-30 card-view">
-					@foreach($data as $isi_inovasi_industri)
-					<img src="{{ asset($isi_inovasi_industri->gambar)}}" alt="">
-					<h3 class="mt-30 mb-5"><a href="#"><b>{{$isi_inovasi_industri->judul}}</b></a></h3>
+					@foreach($data as $isi_buku_ajar)
+					<img src="{{ asset($isi_buku_ajar->gambar)}}" alt="">
+					<h3 class="mt-30 mb-5"><a href="#"><b>{{$isi_buku_ajar->judul}}</b></a></h3>
 					<ul class="list-li-mr-10 color-lite-black">
-						<li><i class="mr-5 font-12 ion-clock"></i>{{$isi_inovasi_industri->created_at->isoFormat('D MMMM YYYY')}}</li>
-						<li><i class="mr-5 font-12 ion-android-person"></i>Admin</li>
-					</ul><br>
-					{!!$isi_inovasi_industri->konten!!}
+                        <li><i class="mr-5 font-12 ion-paperclip"></i>Pengarang: {{$isi_buku_ajar->pengarang}}</li><br>
+                        <li><i class="mr-5 font-12 ion-android-person"></i>Penerbit: {{$isi_buku_ajar->penerbit}}</li>
+                        <li><i class="mr-5 font-12 ion-clock"></i>Tahun terbit: {{$isi_buku_ajar->tahun}}</li>
+                    </ul><br>
+                    <h4 class="p-title-isi"><b>Deskripsi</b></h4>
+                	{!!$isi_hasil_penelitian->deskripsi!!}
 				</div>
+
 				@endforeach
 			</div>
 			<div class="col-md-12 col-lg-4">
 				<div class="mb-30 p-30 card-view">
 					<h4 class="p-title"><b>BERITA</b></h4>
 					<div class="sided-80x mb-20">
-						@foreach($post as $isi_post)
+						@foreach($post as $isi_buku_ajar)
 						<div>
-							<h5><a href="{{ route('blog.isi', $isi_post->slug)}}">
-									<b>{{$isi_post->judul}}</b></a></h5>
+							<h5><a href="{{ route('blog.isi', $isi_buku_ajar->slug)}}">
+									<b>{{$isi_buku_ajar->judul}}</b></a></h5>
 							<ul class="mtb-5 list-li-mr-20 color-lite-black">
-								<li><i class="mr-5 font-12 ion-clock"></i>{{$isi_post->created_at->isoFormat('D MMMM YYYY')}}</li>
+								<li><i class="mr-5 font-12 ion-clock"></i>{{$isi_buku_ajar->created_at->isoFormat('D MMMM YYYY')}}</li>
 							</ul>
 						</div>
 						@endforeach

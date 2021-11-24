@@ -15,7 +15,7 @@
                         <div class="s-right ptb-50 plr-sm-20 pt-sm-20 pb-lg-5 plr-30 plr-xs-0">
                             <h4><a href="{{ route('agenda.isi', $list_agenda->slug)}}">{{$list_agenda->judul}}</a></h4>
                             <ul class="mtb-10 list-li-mr-20 color-lite-black">
-                                <li><i class="mr-5 font-12 ion-clock"></i>{{Carbon\Carbon::parse($list_agenda->tanggal)->isoFormat('D MMMM Y')}}</li><br>
+                                <li><i class="mr-5 font-12 ion-clock"></i>{{$list_agenda->tanggal->isoFormat('D MMMM Y')}}</li><br>
                                 <li><i class="mr-5 font-12 ion-clock"></i>{{$list_agenda->jam}}</li><br>
                                 <li><i class="mr-5 font-12 ion-clock"></i>{{$list_agenda->tempat}}</li>
                             </ul>

@@ -46,8 +46,8 @@
 						@foreach($agenda as $hasil_agenda)
 						<div class="detail-calendar-grey">
 							<div class="calendar-grey">
-								<h3><b>{{Carbon\Carbon::parse($hasil_agenda->tanggal)->isoFormat('D')}}</b></h3>
-								<h4>{{Carbon\Carbon::parse($hasil_agenda->tanggal)->isoFormat('MMM')}}</h4>
+								<h3><b>{{$hasil_agenda->tanggal->isoFormat('D')}}</b></h3>
+                                <h4>{{$hasil_agenda->tanggal->isoFormat('MMM')}}</h4>
 							</div>
 							<div class="calendar-contain-grey">
 								<div class="calendar-contain-description-grey">

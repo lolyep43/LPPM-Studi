@@ -9,4 +9,5 @@ class Agenda extends Model
     protected $table = 'agenda';
     protected $fillable  = ['judul', 'konten', 'tanggal', 'jam', 'tempat', 'slug'];
     protected $guarded = [];
+    protected $dates = ['tanggal'];
 }

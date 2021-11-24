@@ -108,7 +108,7 @@ class HasilPenelitianController extends Controller
         ]);
 
         $hasil_penelitian = HasilPenelitian::findorfail($id);
-
+        
         if ($request->has('foto')) {
             $foto = $request->foto;
             $new_foto = time() . $foto->getClientOriginalName();

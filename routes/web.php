@@ -16,12 +16,14 @@ Route::get('detail-hasil-penelitan/{slug}', 'BlogController@isi_hasil_penelitian
 Route::get('daftar-hasil-penelitian/', 'BlogController@list_hasil_penelitian')->name('hasil-penelitian.list');
 Route::get('detail-hasil-pengabdian/{slug}', 'BlogController@isi_hasil_pengabdian')->name('hasil-pengabdian.isi');
 Route::get('daftar-hasil-pengabdian/', 'BlogController@list_hasil_pengabdian')->name('hasil-pengabdian.list');
+Route::get('detail-buku-ajar/{slug}', 'BlogController@isi_buku_ajar')->name('buku-ajar.isi');
+Route::get('daftar-buku-ajar/', 'BlogController@list_buku_ajar')->name('buku-ajar.list');
+Route::get('detail-publikasi-ilmiah/{slug}', 'BlogController@isi_publikasi_ilmiah')->name('publikasi-ilmiah.isi');
+Route::get('daftar-publikasi-ilmiah/', 'BlogController@list_publikasi_ilmiah')->name('publikasi-ilmiah.list');
 Route::get('detail-inovasi-mandiri/{slug}', 'BlogController@isi_inovasi_mandiri')->name('inovasi-mandiri.isi');
 Route::get('daftar-inovasi-mandiri/', 'BlogController@list_inovasi_mandiri')->name('inovasi-mandiri.list');
 Route::get('detail-inovasi-industri/{slug}', 'BlogController@isi_inovasi_industri')->name('inovasi-industri.isi');
 Route::get('daftar-inovasi-industri/', 'BlogController@list_inovasi_industri')->name('inovasi-industri.list');
-Route::get('detail-publikasi-ilmiah/{slug}', 'BlogController@isi_publikasi_ilmiah')->name('publikasi-ilmiah.isi');
-Route::get('daftar-publikasi-ilmiah/', 'BlogController@list_publikasi_ilmiah')->name('publikasi-ilmiah.list');
 Route::get('daftar-energi/', 'BlogController@list_energi')->name('energi.list');
 Route::get('daftar-pertanian-dan-pangan/', 'BlogController@list_pertanian_dan_pangan')->name('pertanian-dan-pangan.list');
 Route::get('daftar-smart-city/', 'BlogController@list_smart_city')->name('smart-city.list');
@@ -44,6 +46,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/hasil-pengabdian', 'HasilPengabdianController');
     Route::resource('/inovasi-mandiri', 'InovasiMandiriController');
     Route::resource('/inovasi-industri', 'InovasiIndustriController');
+    Route::resource('/buku-ajar', 'BukuAjarController');
     Route::resource('/publikasi-ilmiah', 'PublikasiIlmiahController');
     Route::resource('/dokumen', 'DokumenController');
     Route::resource('/galeri', 'GaleriController');
