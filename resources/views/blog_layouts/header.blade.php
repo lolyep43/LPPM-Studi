@@ -66,7 +66,10 @@
                     </li>
                     <li class="drop-down"><a href="#!">FOKUS RISET<i class="ion-chevron-down"></i></a>
                         <ul class="drop-down-menu drop-down-inner">
-                            <li><a href="{{ route('energi.list') }}">Energi</a></li>
+                            <li class="drop-down"><a href="#!">Energi<i class="ion-chevron-down"></i></a>
+                                <ul class="drop-down-menu drop-down-inner">
+                                    <li><a href="{{ route('energi.list') }}">Energi</a></li>
+                                </ul>
                             <li><a href="{{ route('pertanian-dan-pangan.list') }}">Pangan dan Pertanian</a></li>
                             <li><a href="{{ route('smart-city.list') }}">Smart City</a></li>
                             <li><a href="{{ route('kemaritiman.list') }}">Kemaritiman</a></li>

@@ -59,7 +59,7 @@ class GaleriController extends Controller
 
         ]);
 
-        $galeri = Galeri::findorfail($id);
+        $galeri = Galeri::findOrFail($id);
 
         if ($request->has('gambar')) {
             $file = $request->gambar;
@@ -84,7 +84,7 @@ class GaleriController extends Controller
 
     public function destroy($id)
     {
-        $galeri = Galeri::findorfail($id);
+        $galeri = Galeri::findOrFail($id);
         $galeri->delete();
         return redirect()->route('galeri.index')->with('success', 'Galeri berhasil dihapus');
     }

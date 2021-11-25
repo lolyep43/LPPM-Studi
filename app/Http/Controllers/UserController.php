@@ -38,7 +38,7 @@ class UserController extends Controller
     }
 
     public function edit($id){
-        $User = User::findorfail($id);
+        $User = User::findOrFail($id);
         return view('admin.user.edit', compact('User'));
     }
 
@@ -51,7 +51,7 @@ class UserController extends Controller
             'role' => 'required'
         ]);
 
-        $User = User::findorfail($id);
+        $User = User::findOrFail($id);
 
         $updateUser = [
             'name' => $request->name,
@@ -68,7 +68,7 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        $User = User::findorfail($id);
+        $User = User::findOrFail($id);
         $User->delete();
         return redirect()->route('User.index')->with('success', 'User telah dihapus');
     }

@@ -67,7 +67,7 @@ class PengumumanController extends Controller
 
     public function edit($id)
     {
-        $pengumuman = Pengumuman::findorfail($id);
+        $pengumuman = Pengumuman::findOrFail($id);
         return view('admin.pengumuman.edit', compact('pengumuman'));
     }
 
@@ -79,7 +79,7 @@ class PengumumanController extends Controller
             'file' => 'mimes:pdf,docx'
         ]);
 
-        $pengumuman = Pengumuman::findorfail($id);
+        $pengumuman = Pengumuman::findOrFail($id);
 
         if ($request->has('file')) {
             $file = $request->file;
@@ -106,7 +106,7 @@ class PengumumanController extends Controller
 
     public function destroy($id)
     {
-        $pengumuman = Pengumuman::findorfail($id);
+        $pengumuman = Pengumuman::findOrFail($id);
         $pengumuman->delete();
         return redirect()->route('pengumuman.index')->with('success', 'Pengumuman berhasil dihapus');
     }

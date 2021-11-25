@@ -85,7 +85,7 @@ class PublikasiIlmiahController extends Controller
      */
     public function edit($id)
     {
-        $publikasi_ilmiah = PublikasiIlmiah::findorfail($id);
+        $publikasi_ilmiah = PublikasiIlmiah::findOrFail($id);
         return view('admin.publikasi_ilmiah.edit', compact('publikasi_ilmiah'));
     }
 
@@ -107,7 +107,7 @@ class PublikasiIlmiahController extends Controller
             'tahun' => 'required',
         ]);
 
-        $publikasi_ilmiah = PublikasiIlmiah::findorfail($id);
+        $publikasi_ilmiah = PublikasiIlmiah::findOrFail($id);
 
         if ($request->has('foto')) {
             $foto = $request->foto;
@@ -148,7 +148,7 @@ class PublikasiIlmiahController extends Controller
      */
     public function destroy($id)
     {
-        $publikasi_ilmiah = PublikasiIlmiah::findorfail($id);
+        $publikasi_ilmiah = PublikasiIlmiah::findOrFail($id);
         $publikasi_ilmiah->delete();
         return redirect()->route('publikasi-ilmiah.index')->with('success', 'Data berhasil dihapus');
     }

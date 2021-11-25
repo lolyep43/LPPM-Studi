@@ -64,7 +64,7 @@ class HalamanController extends Controller
 
     public function edit($id)
     {
-        $halaman = Halaman::findorfail($id);
+        $halaman = Halaman::findOrFail($id);
         return view('admin.halaman.edit', compact('halaman'));
     }
 
@@ -75,7 +75,7 @@ class HalamanController extends Controller
             'konten' => 'required',
         ]);
 
-        $halaman = Halaman::findorfail($id);
+        $halaman = Halaman::findOrFail($id);
 
         $halaman_data = [
             'judul' => $request->judul,

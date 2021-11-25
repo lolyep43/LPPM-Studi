@@ -49,7 +49,7 @@ class LaboratoriumController extends Controller
 
     public function edit($id)
     {
-        $laboratorium = Laboratorium::findorfail($id);
+        $laboratorium = Laboratorium::findOrFail($id);
         return view('admin.laboratorium.edit', compact('laboratorium'));
     }
 
@@ -60,7 +60,7 @@ class LaboratoriumController extends Controller
             'deskripsi' => 'required',
         ]);
 
-        $laboratorium = Laboratorium::findorfail($id);
+        $laboratorium = Laboratorium::findOrFail($id);
 
         if ($request->has('foto')) {
             $foto = $request->foto;
@@ -87,7 +87,7 @@ class LaboratoriumController extends Controller
 
     public function destroy($id)
     {
-        $laboratorium = Laboratorium::findorfail($id);
+        $laboratorium = Laboratorium::findOrFail($id);
         $laboratorium->delete();
         return redirect()->route('laboratorium.index')->with('success', 'Laboratorium berhasil dihapus');
     }

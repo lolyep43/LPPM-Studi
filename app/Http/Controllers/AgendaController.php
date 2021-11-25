@@ -67,7 +67,7 @@ class AgendaController extends Controller
 
     public function edit($id)
     {
-        $agenda = Agenda::findorfail($id);
+        $agenda = Agenda::findOrFail($id);
         return view('admin.agenda.edit', compact('agenda'));
     }
 
@@ -81,7 +81,7 @@ class AgendaController extends Controller
             'tempat' => 'required'
         ]);
 
-        $agenda = Agenda::findorfail($id);
+        $agenda = Agenda::findOrFail($id);
 
         $agenda_data = [
             'judul' => $request->judul,
@@ -98,7 +98,7 @@ class AgendaController extends Controller
 
     public function destroy($id)
     {
-        $agenda = Agenda::findorfail($id);
+        $agenda = Agenda::findOrFail($id);
         $agenda->delete();
         return redirect()->route('agenda.index')->with('success', 'Agenda berhasil dihapus');
     }

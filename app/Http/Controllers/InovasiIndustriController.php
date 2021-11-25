@@ -63,7 +63,7 @@ class InovasiIndustriController extends Controller
 
     public function edit($id)
     {
-        $inovasi_industri = InovasiIndustri::findorfail($id);
+        $inovasi_industri = InovasiIndustri::findOrFail($id);
         return view('admin.inovasi_industri.edit', compact('inovasi_industri'));
     }
 
@@ -74,7 +74,7 @@ class InovasiIndustriController extends Controller
             'konten' => 'required',
         ]);
 
-        $inovasi_industri = InovasiIndustri::findorfail($id);
+        $inovasi_industri = InovasiIndustri::findOrFail($id);
 
         if ($request->has('gambar')) {
             $gambar = $request->gambar;
@@ -101,7 +101,7 @@ class InovasiIndustriController extends Controller
 
     public function destroy($id)
     {
-        $inovasi_industri = InovasiIndustri::findorfail($id);
+        $inovasi_industri = InovasiIndustri::findOrFail($id);
         $inovasi_industri->delete();
         return redirect()->route('inovasi-industri.index')->with('success', 'Data berhasil dihapus');
     }

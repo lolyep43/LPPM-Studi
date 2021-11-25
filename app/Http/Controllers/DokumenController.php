@@ -47,7 +47,7 @@ class DokumenController extends Controller
 
     public function edit($id)
     {
-        $dokumen = Dokumen::findorfail($id);
+        $dokumen = Dokumen::findOrFail($id);
         return view('admin.dokumen.edit', compact('dokumen'));
     }
 
@@ -57,7 +57,7 @@ class DokumenController extends Controller
             'judul' => 'required',
         ]);
 
-        $dokumen = Dokumen::findorfail($id);
+        $dokumen = Dokumen::findOrFail($id);
 
         if ($request->has('file')) {
             $file = $request->file;
@@ -82,7 +82,7 @@ class DokumenController extends Controller
 
     public function destroy($id)
     {
-        $dokumen = Dokumen::findorfail($id);
+        $dokumen = Dokumen::findOrFail($id);
         $dokumen->delete();
         return redirect()->route('dokumen.index')->with('success', 'Dokumen berhasil dihapus');
     }

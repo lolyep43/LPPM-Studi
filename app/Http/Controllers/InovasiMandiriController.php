@@ -63,7 +63,7 @@ class InovasiMandiriController extends Controller
 
     public function edit($id)
     {
-        $inovasi_mandiri = InovasiMandiri::findorfail($id);
+        $inovasi_mandiri = InovasiMandiri::findOrFail($id);
         return view('admin.inovasi_mandiri.edit', compact('inovasi_mandiri'));
     }
 
@@ -74,7 +74,7 @@ class InovasiMandiriController extends Controller
             'konten' => 'required',
         ]);
 
-        $inovasi_mandiri = InovasiMandiri::findorfail($id);
+        $inovasi_mandiri = InovasiMandiri::findOrFail($id);
 
         if ($request->has('gambar')) {
             $gambar = $request->gambar;
@@ -101,7 +101,7 @@ class InovasiMandiriController extends Controller
 
     public function destroy($id)
     {
-        $inovasi_mandiri = InovasiMandiri::findorfail($id);
+        $inovasi_mandiri = InovasiMandiri::findOrFail($id);
         $inovasi_mandiri->delete();
         return redirect()->route('inovasi-mandiri.index')->with('success', 'Data berhasil dihapus');
     }

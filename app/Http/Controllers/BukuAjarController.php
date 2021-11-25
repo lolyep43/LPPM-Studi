@@ -50,7 +50,7 @@ class BukuAjarController extends Controller
 
     public function edit($id)
     {
-        $buku_ajar = BukuAjar::findorfail($id);
+        $buku_ajar = BukuAjar::findOrFail($id);
         return view('admin.buku_ajar.edit', compact('buku_ajar'));
     }
 
@@ -64,7 +64,7 @@ class BukuAjarController extends Controller
             'tahun' => 'required'
         ]);
 
-        $buku_ajar = BukuAjar::findorfail($id);
+        $buku_ajar = BukuAjar::findOrFail($id);
 
         if ($request->has('gambar')) {
             $gambar = $request->gambar;
@@ -97,7 +97,7 @@ class BukuAjarController extends Controller
 
     public function destroy($id)
     {
-        $buku_ajar = BukuAjar::findorfail($id);
+        $buku_ajar = BukuAjar::findOrFail($id);
         $buku_ajar->delete();
         return redirect()->route('buku-ajar.index')->with('success', 'Berita berhasil dihapus');
     }

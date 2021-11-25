@@ -35,7 +35,7 @@ class SliderController extends Controller
 
     public function edit($id)
     {
-        $slider = Slider::findorfail($id);
+        $slider = Slider::findOrFail($id);
         return view('admin.sliders.edit', compact('slider'));
     }
 
@@ -53,7 +53,7 @@ class SliderController extends Controller
             'gambar' => 'required|mimes:jpeg,png',
         ]);
 
-        $slider = Slider::findorfail($id);
+        $slider = Slider::findOrFail($id);
 
         $gambar = $request->gambar;
         $new_gambar = time() . $gambar->getClientOriginalName();

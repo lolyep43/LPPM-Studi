@@ -85,7 +85,7 @@ class HasilPenelitianController extends Controller
      */
     public function edit($id)
     {
-        $hasil_penelitian = HasilPenelitian::findorfail($id);
+        $hasil_penelitian = HasilPenelitian::findOrFail($id);
         return view('admin.hasil_penelitian.edit', compact('hasil_penelitian'));
     }
 
@@ -107,7 +107,7 @@ class HasilPenelitianController extends Controller
             'tahun' => 'required',
         ]);
 
-        $hasil_penelitian = HasilPenelitian::findorfail($id);
+        $hasil_penelitian = HasilPenelitian::findOrFail($id);
         
         if ($request->has('foto')) {
             $foto = $request->foto;
@@ -148,7 +148,7 @@ class HasilPenelitianController extends Controller
      */
     public function destroy($id)
     {
-        $hasil_penelitian = HasilPenelitian::findorfail($id);
+        $hasil_penelitian = HasilPenelitian::findOrFail($id);
         $hasil_penelitian->delete();
         return redirect()->route('hasil-penelitian.index')->with('success', 'Hasil penelitian berhasil dihapus');
     }

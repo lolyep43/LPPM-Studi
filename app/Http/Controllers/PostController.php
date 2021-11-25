@@ -63,7 +63,7 @@ class PostController extends Controller
 
     public function edit($id)
     {
-        $post = Posts::findorfail($id);
+        $post = Posts::findOrFail($id);
         return view('admin.posts.edit', compact('post'));
     }
 
@@ -74,7 +74,7 @@ class PostController extends Controller
             'konten' => 'required',
         ]);
 
-        $post = Posts::findorfail($id);
+        $post = Posts::findOrFail($id);
 
         if ($request->has('gambar')) {
             $gambar = $request->gambar;
@@ -101,7 +101,7 @@ class PostController extends Controller
 
     public function destroy($id)
     {
-        $post = Posts::findorfail($id);
+        $post = Posts::findOrFail($id);
         $post->delete();
         return redirect()->route('post.index')->with('success', 'Berita berhasil dihapus');
     }

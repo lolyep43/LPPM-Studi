@@ -553,6 +553,7 @@ header .main-menu li.drop-down a.mouseover+ul.drop-down-menu {
         box-shadow: none;
     }
 
+
     header .main-menu li.drop-down>ul.drop-down-menu li {
         border-top: 1px solid #0C0E68;
     }
@@ -570,6 +571,7 @@ header .main-menu li.drop-down a.mouseover+ul.drop-down-menu {
     header .main-menu li.drop-down>ul.drop-down-inner li a {
         padding-left: 35px;
     }
+    
 
 }
 

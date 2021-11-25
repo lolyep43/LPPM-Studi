@@ -83,7 +83,7 @@ class HasilPengabdianController extends Controller
      */
     public function edit($id)
     {
-        $hasil_pengabdian = HasilPengabdian::findorfail($id);
+        $hasil_pengabdian = HasilPengabdian::findOrFail($id);
         return view('admin.hasil_pengabdian.edit', compact('hasil_pengabdian'));
     }
 
@@ -104,7 +104,7 @@ class HasilPengabdianController extends Controller
             'tahun' => 'required',
         ]);
 
-        $hasil_pengabdian = HasilPengabdian::findorfail($id);
+        $hasil_pengabdian = HasilPengabdian::findOrFail($id);
 
         if ($request->has('foto')) {
             $foto = $request->foto;
@@ -143,7 +143,7 @@ class HasilPengabdianController extends Controller
      */
     public function destroy($id)
     {
-        $hasil_pengabdian = HasilPengabdian::findorfail($id);
+        $hasil_pengabdian = HasilPengabdian::findOrFail($id);
         $hasil_pengabdian->delete();
         return redirect()->route('hasil-pengabdian.index')->with('success', 'Hasil pengabdian berhasil dihapus');
     }
