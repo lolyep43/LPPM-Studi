@@ -32,6 +32,7 @@ Route::get('daftar-dokumen/', 'BlogController@list_dokumen')->name('dokumen.list
 Route::get('daftar-galeri/', 'BlogController@list_galeri')->name('galeri.list');
 Route::get('daftar-laboratorium/', 'BlogController@list_laboratorium')->name('laboratorium.list');
 Route::get('detail-halaman/{slug}', 'BlogController@isi_halaman')->name('halaman.isi');
+Route::get('halaman/struktur-organisasi', 'BlogController@isi_struktur_organisasi')->name('struktur-organisasi.isi');
 Route::get('/login', 'AuthController@login')->name('login');
 Route::post('/postlogin', 'AuthController@postlogin');
 Route::get('/logout', 'AuthController@logout');
@@ -52,6 +53,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/galeri', 'GaleriController');
     Route::resource('/laboratorium', 'LaboratoriumController');
     Route::resource('/halaman', 'HalamanController');
+    Route::resource('/struktur-organisasi', 'StrukturOrganisasiController');
     Route::resource('/User', 'UserController')->middleware('checkRole:Super Admin');
     Route::post('/images', 'PostController@uploadImage')->name('post.image');
 });

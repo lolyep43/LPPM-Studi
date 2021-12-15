@@ -472,8 +472,14 @@
                                     <i class="metismenu-icon pe-7s-display2"></i>
                                     Halaman
                                 </a>
-                            @can('super-admin')
                             </li>
+                            <li>
+                                <a href="{{ route('struktur-organisasi.index') }}">
+                                    <i class="metismenu-icon pe-7s-display2"></i>
+                                    Struktur Organisasi
+                                </a>
+                            </li>
+                            @can('super-admin')
                             <li class="app-sidebar__heading">Tambah Akun</li>
                             <li>
                                 <a href="{{ route('User.index') }}">

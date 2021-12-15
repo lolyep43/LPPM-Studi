@@ -52,7 +52,7 @@
                             <li><a href="/detail-halaman/sambutan-ketua-lppm">Sambutan Ketua LPPM</a></li>
                             <li><a href="/detail-halaman/sejarah">Sejarah</a></li>
                             <li><a href="/detail-halaman/visi-misi-tujuan">Visi, Misi, & Tujuan</a></li>
-                            <li><a href="/detail-halaman/struktur-organisasi">Struktur Organisasi</a></li>
+                            <li><a href="/halaman/struktur-organisasi">Struktur Organisasi</a></li>
                         </ul>
                     </li>
                     <li class="drop-down"><a href="#!">PUSAT STUDI<i class="ion-chevron-down"></i></a>
@@ -66,10 +66,7 @@
                     </li>
                     <li class="drop-down"><a href="#!">FOKUS RISET<i class="ion-chevron-down"></i></a>
                         <ul class="drop-down-menu drop-down-inner">
-                            <li class="drop-down"><a href="#!">Energi<i class="ion-chevron-down"></i></a>
-                                <ul class="drop-down-menu drop-down-inner">
-                                    <li><a href="{{ route('energi.list') }}">Energi</a></li>
-                                </ul>
+                            <li><a href="{{ route('energi.list') }}">Energi</a></li>
                             <li><a href="{{ route('pertanian-dan-pangan.list') }}">Pangan dan Pertanian</a></li>
                             <li><a href="{{ route('smart-city.list') }}">Smart City</a></li>
                             <li><a href="{{ route('kemaritiman.list') }}">Kemaritiman</a></li>

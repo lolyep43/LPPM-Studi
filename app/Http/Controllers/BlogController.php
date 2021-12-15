@@ -16,6 +16,7 @@ use App\InovasiMandiri;
 use App\InovasiIndustri;
 use App\Halaman;
 use App\BukuAjar;
+use App\StrukturOrganisasi;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -65,6 +66,15 @@ class BlogController extends Controller
         $agenda = Agenda::latest()->paginate(5);
         $data = HasilPenelitian::where('slug', $slug)->get();
         return view('blog.hasil_penelitian.detail_hasil_penelitian', compact('data', 'post', 'pengumuman', 'agenda'));
+    }
+
+    public function isi_struktur_organisasi()
+    {
+        $post = Posts::latest()->paginate(5);
+        $pengumuman = Pengumuman::latest()->paginate(5);
+        $agenda = Agenda::latest()->paginate(5);
+        $data = StrukturOrganisasi::all();
+        return view('blog.struktur_organisasi.detail_struktur_organisasi', compact('data', 'post', 'pengumuman', 'agenda'));
     }
 
     public function isi_hasil_pengabdian($slug)
