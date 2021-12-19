@@ -66,10 +66,36 @@
                     </li>
                     <li class="drop-down"><a href="#!">FOKUS RISET<i class="ion-chevron-down"></i></a>
                         <ul class="drop-down-menu drop-down-inner">
-                            <li><a href="{{ route('energi.list') }}">Energi</a></li>
-                            <li><a href="{{ route('pertanian-dan-pangan.list') }}">Pangan dan Pertanian</a></li>
-                            <li><a href="{{ route('smart-city.list') }}">Smart City</a></li>
-                            <li><a href="{{ route('kemaritiman.list') }}">Kemaritiman</a></li>
+                            <div id="halaman">
+                                <nav>
+                                    <ul>
+                                        <li><a href="">Energi</a>
+                                            <ul>
+                                                <li><a href="{{ route('energi.isi') }}">Deskripsi</a></li>
+                                                <li><a href="{{ route('energi.list') }}">List</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="">Pertanian dan Pangan</a>
+                                            <ul>
+                                                <li><a href="{{ route('pertanian-dan-pangan.isi') }}">Deskripsi</a></li>
+                                                <li><a href="{{ route('pertanian-dan-pangan.list') }}">List</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="">Smart City</a>
+                                            <ul>
+                                                <li><a href="{{ route('smart-city.isi') }}">Deskripsi</a></li>
+                                                <li><a href="{{ route('smart-city.list') }}">List</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="">Kemaritiman</a>
+                                            <ul>
+                                                <li><a href="{{ route('kemaritiman.isi') }}">Deskripsi</a></li>
+                                                <li><a href="{{ route('kemaritiman.list') }}">List</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </ul>
                     </li>
                     <li class="drop-down"><a href="#!">FASILITAS<i class="ion-chevron-down"></i></a>

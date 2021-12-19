@@ -1893,6 +1893,69 @@ form textarea {
 
 */
 
+/* dropdown sendiri */
+.halaman{
+	width: 800px;
+	margin: auto;
+}
+
+nav {
+	background-color:  #0A2D8B ;
+	display: inline-block;
+	width: 50%;
+}
+
+nav ul{
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+
+}
+
+nav ul li {
+	float: left;
+	background-color:  #0A2D8B ;
+}
+
+nav a{
+	display: block;
+	padding: 0 10px;
+	color: #fff;
+	line-height: 30px;
+	font-size :14px;
+	text-decoration: none;
+    font-weight:  700;
+
+}
+
+nav a:hover {
+	background-color: #0C0E68;
+}
+
+nav ul ul {
+	display: none;
+	position: absolute;
+	top : 60px;
+}
+
+nav ul li:hover > ul{
+	display: block;
+}
+
+nav ul li {
+	width: 190px;
+	float: none;
+	display: list-item;
+	position: relative;
+}
+
+nav ul ul li{
+	position: relative;
+	top: -60px;
+	left: 190px;
+}
+/* Akhir dropdown menu sendiri */
+
 .tree{
     display: flex;
     justify-content: center;
