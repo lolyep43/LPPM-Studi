@@ -441,6 +441,12 @@
                                     Laboratorium
                                 </a>
                             </li>
+                            <li>
+                                <a href="{{ route('deskripsi-fokus-riset.index') }}">
+                                    <i class="metismenu-icon pe-7s-display2"></i>
+                                    Deskrpsi Fokus Riset
+                                </a>
+                            </li>
                             <li class="drop-down"><a href="#!">Luaran<i class="metismenu-icon pe-7s-display2"></i></a>
                                 <ul class="drop-down-menu drop-down-inner">
                                     <li><a href="{{ route('hasil-penelitian.index') }}">Hasil Penelitian</a></li>

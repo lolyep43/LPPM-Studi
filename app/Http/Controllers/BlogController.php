@@ -17,6 +17,7 @@ use App\InovasiIndustri;
 use App\Halaman;
 use App\BukuAjar;
 use App\StrukturOrganisasi;
+use App\deskripsiFokus;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -150,6 +151,42 @@ class BlogController extends Controller
         $data_hasil_penelitian = HasilPenelitian::where('fokus_riset', $fokus_riset)->latest()->paginate(3);
         $data_publikasi_ilmiah = PublikasiIlmiah::where('fokus_riset', $fokus_riset)->latest()->paginate(3);
         return view('blog.fokus_riset.list_energi', compact('jumlah_data_hasil_penelitian','jumlah_data_publikasi_ilmiah','data_hasil_penelitian','data_publikasi_ilmiah','post','pengumuman','agenda'));
+    }
+
+    public function deskripsi_energi()
+    {
+        $post = Posts::latest()->paginate(5);
+        $pengumuman = Pengumuman::latest()->paginate(5);
+        $agenda = Agenda::latest()->paginate(5);
+        $data = deskripsiFokus::where('judul', 'Energi')->get();
+        return view('blog.deskripsi_fokus_riset.deskripsi_energi', compact('data', 'post', 'pengumuman', 'agenda'));
+    }
+
+    public function deskripsi_pertanian_dan_pangan()
+    {
+        $post = Posts::latest()->paginate(5);
+        $pengumuman = Pengumuman::latest()->paginate(5);
+        $agenda = Agenda::latest()->paginate(5);
+        $data = deskripsiFokus::where('judul', 'Pertanian dan Pangan')->get();
+        return view('blog.deskripsi_fokus_riset.deskripsi_pertanian_dan_pangan', compact('data', 'post', 'pengumuman', 'agenda'));
+    }
+
+    public function deskripsi_smart_city()
+    {
+        $post = Posts::latest()->paginate(5);
+        $pengumuman = Pengumuman::latest()->paginate(5);
+        $agenda = Agenda::latest()->paginate(5);
+        $data = deskripsiFokus::where('judul', 'Smart City')->get();
+        return view('blog.deskripsi_fokus_riset.deskripsi_smart_city', compact('data', 'post', 'pengumuman', 'agenda'));
+    }
+
+    public function deskripsi_kemaritiman()
+    {
+        $post = Posts::latest()->paginate(5);
+        $pengumuman = Pengumuman::latest()->paginate(5);
+        $agenda = Agenda::latest()->paginate(5);
+        $data = deskripsiFokus::where('judul', 'Kemaritiman')->get();
+        return view('blog.deskripsi_fokus_riset.deskripsi_kemaritiman', compact('data', 'post', 'pengumuman', 'agenda'));
     }
 
     public function list_pertanian_dan_pangan(){

@@ -1,33 +1,22 @@
 @extends('blog_layouts.content')
-@section('judul',  'Struktur Organisasi - LPPM ITK')
+@foreach($data as $isi_halaman)
+@section('judul', $isi_halaman->judul. ' - LPPM ITK')
+@endforeach
 @section('isi')
-
 <section style="padding-bottom: 25px;">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12 col-lg-8 justify-content-center">
-				<div class="p-30 mb-30 card-view my-auto">
-					<h3 class="mt-30 mb-5 text-center"><a href="#"><b>STRUKTUR ORGANISASI</b></a></h3>
-					<div class="tree">
-						<ul>
-							@foreach($data as $isi_struktur_organisasi)
-							@if($isi_struktur_organisasi->jabatan == 'Ketua LPPM')
-							<li><a>{{$isi_struktur_organisasi->jabatan}}<br>{{$isi_struktur_organisasi->nama}}<br>{{$isi_struktur_organisasi->nomor}}</a>
-								<ul>
-									@foreach($data as $isi_struktur_organisasi)
-									@if($isi_struktur_organisasi->jabatan == 'Admin')
-									<li>
-										<a>{{$isi_struktur_organisasi->jabatan}}<br>{{$isi_struktur_organisasi->nama}}<br>{{$isi_struktur_organisasi->nomor}}</a>
-									</li>
-									@endif
-									@endforeach
-								</ul>
-							</li>
-							@endif
-							@endforeach
-						</ul>
-					</div>
+			<div class="col-md-12 col-lg-8">
+				<div class="p-30 mb-30 card-view">
+					@foreach($data as $isi_halaman)
+					<h3 class="mt-5 mb-5"><a href="#"><b>{{$isi_halaman->judul}}</b></a></h3>
+					<ul class="list-li-mr-10 color-lite-black">
+						<li><i class="mr-5 font-12 ion-android-person"></i>Admin</li>
+					</ul><br>
+					{!!$isi_halaman->deskripsi!!}
 				</div>
+
+				@endforeach
 			</div>
 			<div class="col-md-12 col-lg-4">
 				<div class="mb-30 p-30 card-view">

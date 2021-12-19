@@ -28,6 +28,10 @@ Route::get('daftar-energi/', 'BlogController@list_energi')->name('energi.list');
 Route::get('daftar-pertanian-dan-pangan/', 'BlogController@list_pertanian_dan_pangan')->name('pertanian-dan-pangan.list');
 Route::get('daftar-smart-city/', 'BlogController@list_smart_city')->name('smart-city.list');
 Route::get('daftar-kemaritiman/', 'BlogController@list_kemaritiman')->name('kemaritiman.list');
+Route::get('deskripsi-energi/', 'BlogController@deskripsi_energi')->name('energi.isi');
+Route::get('deskripsi-pertanian-dan-pangan/', 'BlogController@deskripsi_pertanian_dan_pangan')->name('pertanian-dan-pangan.isi');
+Route::get('deskripsi-smart-city/', 'BlogController@deskripsi_smart_city')->name('smart-city.isi');
+Route::get('deskripsi-kemaritiman/', 'BlogController@deskripsi_kemaritiman')->name('kemaritiman.isi');
 Route::get('daftar-dokumen/', 'BlogController@list_dokumen')->name('dokumen.list');
 Route::get('daftar-galeri/', 'BlogController@list_galeri')->name('galeri.list');
 Route::get('daftar-laboratorium/', 'BlogController@list_laboratorium')->name('laboratorium.list');
@@ -43,6 +47,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/post', 'PostController');
     Route::resource('/pengumuman', 'PengumumanController');
     Route::resource('/agenda', 'AgendaController');
+    Route::resource('/deskripsi-fokus-riset', 'deskripsiFokusController');
     Route::resource('/hasil-penelitian', 'HasilPenelitianController');
     Route::resource('/hasil-pengabdian', 'HasilPengabdianController');
     Route::resource('/inovasi-mandiri', 'InovasiMandiriController');

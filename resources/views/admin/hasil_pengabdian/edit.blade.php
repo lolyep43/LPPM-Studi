@@ -23,14 +23,14 @@
         <div class="main-card mb-3 card">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-190">
+                    <div class="col-md-8">
                         <form class="" action="{{ route('hasil-pengabdian.update', $hasil_pengabdian->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH ')
                             <div class="position-relative form-group"><label>Pengabdi</label><input name="peneliti" type="text" class="form-control" value="{{ $hasil_pengabdian->peneliti }}"></div>
                             <div class="position-relative form-group"><label>Judul</label><input name="judul" type="text" class="form-control" value="{{ $hasil_pengabdian->judul }}"></div>
-                            <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="konten">{{ $hasil_pengabdian->deskripsi }}</textarea></div>
-                            <div class="position-relative form-group"><label>Manfaat</label><textarea name="manfaat" class="form-control" id="konten">{{ $hasil_pengabdian->manfaat }}</textarea></div>
+                            <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="konten1">{{ $hasil_pengabdian->deskripsi }}</textarea></div>
+                            <div class="position-relative form-group"><label>Manfaat</label><textarea name="manfaat" class="form-control" id="konten2">{{ $hasil_pengabdian->manfaat }}</textarea></div>
                     </div>
                     <div class="col-md-4">
                         <div class="position-relative form-group"><label>Tahun</label><input name="tahun" type="text" class="form-control" value="{{ $hasil_pengabdian->tahun }}"></div>
@@ -49,11 +49,16 @@
 
 <script src="https://cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace('konten', {
+    CKEDITOR.replace('konten1', {
         filebrowserUploadUrl: "{{route('post.image', ['_token' => csrf_token() ])}}",
         filebrowserUploadMethod: 'form',
         height: 500,
-
+        removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar,Print,NewPage,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TexField,Textarea,Select,Button,ImageButton,HiddenField,RemoveFormat,Outdent,Indent,BidiLtr,BidiRtl,CreatePlaceHolder,CreateDiv,Iframe,Smiley,Preview,Save'
+    });
+    CKEDITOR.replace('konten2', {
+        filebrowserUploadUrl: "{{route('post.image', ['_token' => csrf_token() ])}}",
+        filebrowserUploadMethod: 'form',
+        height: 250,
         removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar,Print,NewPage,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TexField,Textarea,Select,Button,ImageButton,HiddenField,RemoveFormat,Outdent,Indent,BidiLtr,BidiRtl,CreatePlaceHolder,CreateDiv,Iframe,Smiley,Preview,Save'
     });
 </script>

@@ -37,8 +37,8 @@
                                     <option {{ $hasil_penelitian->fokus_riset == 'Kemaritiman' ? "selected" : "" }} value="Kemaritiman">Kemaritiman</option>
                                 </select>
                             </div>    
-                            <div class="position-relative form-group"><label>Manfaat</label><textarea name="manfaat" class="form-control" id="konten">{{ $hasil_penelitian->manfaat }}</textarea></div>
-                            <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="konten">{{ $hasil_penelitian->deskripsi }}</textarea></div>
+                            <div class="position-relative form-group"><label>Manfaat</label><textarea name="manfaat" class="form-control" id="konten2">{{ $hasil_penelitian->manfaat }}</textarea></div>
+                            <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="konten1">{{ $hasil_penelitian->deskripsi }}</textarea></div>
                     </div>
                     <div class="col-md-4">
                         <div class="position-relative form-group"><label>Tahun</label><input name="tahun" type="text" class="form-control" value="{{ $hasil_penelitian->tahun }}"></div>
@@ -57,11 +57,16 @@
 
 <script src="https://cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace('konten', {
+    CKEDITOR.replace('konten1', {
         filebrowserUploadUrl: "{{route('post.image', ['_token' => csrf_token() ])}}",
         filebrowserUploadMethod: 'form',
         height: 500,
-
+        removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar,Print,NewPage,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TexField,Textarea,Select,Button,ImageButton,HiddenField,RemoveFormat,Outdent,Indent,BidiLtr,BidiRtl,CreatePlaceHolder,CreateDiv,Iframe,Smiley,Preview,Save'
+    });
+    CKEDITOR.replace('konten2', {
+        filebrowserUploadUrl: "{{route('post.image', ['_token' => csrf_token() ])}}",
+        filebrowserUploadMethod: 'form',
+        height: 250,
         removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar,Print,NewPage,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TexField,Textarea,Select,Button,ImageButton,HiddenField,RemoveFormat,Outdent,Indent,BidiLtr,BidiRtl,CreatePlaceHolder,CreateDiv,Iframe,Smiley,Preview,Save'
     });
 </script>

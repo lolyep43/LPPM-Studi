@@ -1893,11 +1893,14 @@ form textarea {
 
 */
 
-
+.tree{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .tree ul {
 	padding-top: 20px; position: relative;
-	
 	transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
@@ -1964,6 +1967,7 @@ right connector from last child*/
 .tree li a{
 	border: 1px solid #ccc;
 	padding: 5px 10px;
+    width: 11vw;
 	text-decoration: none;
 	color: #666;
 	font-family: arial, verdana, tahoma;
