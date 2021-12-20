@@ -17,6 +17,7 @@
 				<h5 class="f-title"><b>Informasi</b></h5>
 				<ul class="mb-30 list-hover list-block list-a-ptb-5">
 					<li><a href="https://itk.ac.id/" target="_blank">Institut Teknologi Kalimantan</a></li>
+					<li><a href="https://simpas.itk.ac.id/" target="_blank">Sistem Informasi Penelitian dan Pengabdian Masyarakat</a></li>
 					<li><a href="http://pmb.itk.ac.id/" target="_blank">Penerimaan Mahasiswa Baru</a></li>
 					<li><a href="http://ict.itk.ac.id/" target="_blank">UPT. Komputer dan Jaringan</a></li>
 					<li><a href="https://itk.ac.id/" target="_blank">UPT. Bahasa</a></li>

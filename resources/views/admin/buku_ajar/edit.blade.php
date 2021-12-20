@@ -31,8 +31,8 @@
                             <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="konten" value="{{ $buku_ajar->deskripsi }} "></textarea></div>
                     </div>
                     <div class="col-md-4">
-                        <div class="position-relative form-group"><label>Tahun</label><input name="penerbit" type="text" class="form-control" value="{{ $buku_ajar->penerbit }}"></div>
-                        <div class="position-relative form-group"><label>Tahun</label><input name="tahun" type="text" class="form-control" value="{{ $buku_ajar->tahun }}"></div>
+                        <div class="position-relative form-group"><label>Penerbit</label><input name="penerbit" type="text" class="form-control" value="{{ $buku_ajar->penerbit }}"></div>
+                        <div class="position-relative form-group"><label>Tahun Terbit</label><input name="tahun" type="text" class="form-control" value="{{ $buku_ajar->tahun }}"></div>
                         <div class="position-relative form-group"><label>Foto</label><br>
                             <img src="{{ asset($buku_ajar->gambar) }}" class="img-fluid" style="width:100%" target="_blank"><br><br>
                             <input name="foto" type="file" class="form-control-file">

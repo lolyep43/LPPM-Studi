@@ -17,7 +17,7 @@
 </div>
 @endif
 
-<h1>Tambah Buku AjAR</h1><br>
+<h1>Tambah Berita</h1><br>
 <div class="row">
     <div class="col-lg-12">
         <div class="main-card mb-3 card">

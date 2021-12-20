@@ -16,7 +16,6 @@
 					</ul><br>
 					{!!$isi_halaman->konten!!}
 				</div>
-
 				@endforeach
 			</div>
 			<div class="col-md-12 col-lg-4">

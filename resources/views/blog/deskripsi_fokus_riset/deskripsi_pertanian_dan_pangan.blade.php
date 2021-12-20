@@ -11,11 +11,11 @@
 					@foreach($data as $isi_halaman)
 					<h3 class="mt-5 mb-5"><a href="#"><b>{{$isi_halaman->judul}}</b></a></h3>
 					<ul class="list-li-mr-10 color-lite-black">
+						<li><i class="mr-5 font-12 ion-clock"></i>{{$isi_halaman->updated_at->isoFormat('D MMMM YYYY')}}</li>
 						<li><i class="mr-5 font-12 ion-android-person"></i>Admin</li>
 					</ul><br>
 					{!!$isi_halaman->deskripsi!!}
 				</div>
-
 				@endforeach
 			</div>
 			<div class="col-md-12 col-lg-4">

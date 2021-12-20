@@ -35,13 +35,13 @@
                                     <option value="Smart City">Smart City</option>
                                     <option value="Kemaritiman">Kemaritiman</option>
                                 </select>
-                            <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="konten" ></textarea></div>
+                            <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="konten1" ></textarea></div>
                             </div>
                     </div>
 
 
                     <div class="col-md-6">
-                        <div class="position-relative form-group"><label>Manfaat</label><textarea name="manfaat" class="form-control" id="editor2"></textarea></div>
+                        <div class="position-relative form-group"><label>Manfaat</label><textarea name="manfaat" class="form-control" id="konten2"></textarea></div>
                         <div class="position-relative form-group"><label>Tahun</label><input name="tahun" type="text" class="form-control"></div>
                         <div class="position-relative form-group"><label>Foto</label><input name="foto" type="file" class="form-control-file">
                         </div>
@@ -58,11 +58,16 @@
 
 <script src="https://cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
 <script>
-   CKEDITOR.replace('konten', {
+    CKEDITOR.replace('konten1', {
         filebrowserUploadUrl: "{{route('post.image', ['_token' => csrf_token() ])}}",
         filebrowserUploadMethod: 'form',
         height: 500,
-        
+        removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar,Print,NewPage,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TexField,Textarea,Select,Button,ImageButton,HiddenField,RemoveFormat,Outdent,Indent,BidiLtr,BidiRtl,CreatePlaceHolder,CreateDiv,Iframe,Smiley,Preview,Save'
+    });
+    CKEDITOR.replace('konten2', {
+        filebrowserUploadUrl: "{{route('post.image', ['_token' => csrf_token() ])}}",
+        filebrowserUploadMethod: 'form',
+        height: 250,
         removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar,Print,NewPage,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TexField,Textarea,Select,Button,ImageButton,HiddenField,RemoveFormat,Outdent,Indent,BidiLtr,BidiRtl,CreatePlaceHolder,CreateDiv,Iframe,Smiley,Preview,Save'
     });
 </script>
