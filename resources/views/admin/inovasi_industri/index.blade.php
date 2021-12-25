@@ -1,5 +1,5 @@
 @extends('admin_layouts.master')
-@section('title', 'Berita - LPPM ITK')
+@section('title', 'Inovasi dengan Industri - LPPM ITK')
 @section('content')
 
 <h1>Inovasi Industri </h1><br>

@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class StrukturOrganisasi extends Model
 {
     protected $table = 'struktur_organisasi';
-    protected $fillable = ['nama','jabatan','nomor'];
+    protected $fillable = ['nama','jabatan'];
     protected $guarded = ['']; 
 }

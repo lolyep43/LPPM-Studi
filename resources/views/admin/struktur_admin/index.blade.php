@@ -2,7 +2,7 @@
 @section('title', 'Struktur Organisasi - LPPM ITK')
 @section('content')
 
-<h1>Struktur Organisasi</h1><br>
+<h1>Struktur Admin</h1><br>
 
 @if(Session::has('success'))
 <div class="alert alert-success" role="alert">
@@ -15,7 +15,7 @@
         <div class="main-card mb-3 card">
             <div class="card-body">
                 <h5 class="card-title">
-                    <a href="{{ route('struktur-organisasi.create')}}" class="btn btn-success btn-sm">Tambah Anggota</a>
+                    <a href="{{ route('struktur-admin.create')}}" class="btn btn-success btn-sm">Tambah Anggota</a>
                 </h5>
                 <table class="mb-0 table table-striped">
                     <thead>
@@ -23,6 +23,7 @@
                             <th>#</th>
                             <th>Nama</th>
                             <th>Jabatan</th>
+                            <th>Atasan</th>
                             <th>Edit<th>
                         </tr>
                     </thead>
@@ -32,11 +33,16 @@
                             <th scope="row">{{ $loop->iteration }}</th>
                             <td>{{ $hasil->nama}}</td>
                             <td>{{ $hasil->jabatan}}</td>
+                            @foreach ($items->flatten() as $item)
+                            @if($hasil->id_atasan == $item->id)
+                                <td>{{ $item->nama}}</td>
+                            @endif
+                            @endforeach
                             <td>
-                                <form action="{{ route('struktur-organisasi.destroy', $hasil->id) }}" method="POST">
+                                <form action="{{ route('struktur-admin.destroy', $hasil->id) }}" method="POST">
                                     @csrf
                                     @method('delete')
-                                    <a href="{{ route('struktur-organisasi.edit', $hasil->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                    <a href="{{ route('struktur-admin.edit', $hasil->id) }}" class="btn btn-warning btn-sm">Edit</a>
                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus {{ $hasil->nama}} dengan jabatan {{ $hasil->jabatan }}?');">Hapus</button>
                                 </form>
                             </td>

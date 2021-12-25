@@ -31,7 +31,7 @@ class BukuAjarController extends Controller
             'tahun' => 'required'
         ]);
 
-        $foto = $request->gambar;
+        $gambar = $request->gambar;
         $new_gambar = time() . $gambar->getClientOriginalName();
 
         $buku_ajar = BukuAjar::create([
@@ -39,12 +39,12 @@ class BukuAjarController extends Controller
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
             'penerbit' => $request->penerbit,
-            'gambar' => 'public/uploads/buku_ajar/' . $new_gambar,
+            'gambar' => 'public/uploads/buku-ajar/' . $new_gambar,
             'tahun' => $request->tahun,
             'slug' => Str::slug($request->judul)
         ]);
 
-        $gambar->move('public/uploads/buku_ajar/', $new_gambar);
+        $gambar->move('public/uploads/buku-ajar/', $new_gambar);
         return redirect()->route('buku-ajar.index')->with('success', 'Buku Ajar berhasil ditambahkan');
     }
 
@@ -69,7 +69,7 @@ class BukuAjarController extends Controller
         if ($request->has('gambar')) {
             $gambar = $request->gambar;
             $new_gambar = time() . $gambar->getClientOriginalName();
-            $gambar->move('public/uploads/buku_ajar/', $new_gambar);
+            $gambar->move('public/uploads/buku-ajar/', $new_gambar);
 
             $buku_ajar_data = [
                 'pengarang' => $request->pengarang,
@@ -77,7 +77,7 @@ class BukuAjarController extends Controller
                 'penerbit' => $request->penerbit,
                 'judul' => $request->judul,
                 'deskripsi' => $request->deskripsi,
-                'gambar' => 'public/uploads/buku_ajar/' . $new_gambar,
+                'gambar' => 'public/uploads/buku-ajar/' . $new_gambar,
                 'slug' => Str::slug($request->judul)
             ];
         } else {

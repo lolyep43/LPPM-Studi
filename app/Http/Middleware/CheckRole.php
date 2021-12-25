@@ -10,8 +10,9 @@ class CheckRole
     {
         //jika akun yang login sesuai dengan role 
         //maka silahkan akses
-        //jika tidak sesuai akan diarahkan ke home
-    
+        //jika tidak sesuai akan diarahkan halaman 503
+
+        
         $roles = array_slice(func_get_args(), 2);
     
         foreach ($roles as $role) { 

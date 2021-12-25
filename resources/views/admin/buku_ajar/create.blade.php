@@ -33,7 +33,7 @@
                     <div class="col-md-4">
                         <div class="position-relative form-group"><label>Penerbit</label><input name="penerbit" type="text" class="form-control"></div>
                         <div class="position-relative form-group"><label>Tahun terbit</label><input name="tahun" type="text" class="form-control"></div>
-                        <div class="position-relative form-group"><label>Foto</label><input name="gambar" type="file" class="form-control-file"></div>
+                        <div class="position-relative form-group"><label>Gambar</label><input name="gambar" type="file" class="form-control-file"></div>
                         <button class="mt-1 btn btn-primary">Publish</button>
                         </form>
                         <br>

@@ -21,14 +21,12 @@ class StrukturOrganisasiController extends Controller
         $this->validate($request, [
             'nama' => 'required',
             'jabatan' => 'required',
-            'nomor' => 'required',
-            
+
         ]);
 
         $data = StrukturOrganisasi::create([
             'nama' => $request->nama,
             'jabatan' => $request->jabatan,
-            'nomor' => $request->nomor
         ]);
 
         return redirect()->route('struktur-organisasi.index')->with('success', 'Data telah ditambahkan');
@@ -44,7 +42,7 @@ class StrukturOrganisasiController extends Controller
         $this->validate($request, [
             'nama' => 'required',
             'jabatan' => 'required',
-            'nomor' => 'required',
+
         ]);
 
         $data = StrukturOrganisasi::findOrFail($id);
@@ -52,7 +50,6 @@ class StrukturOrganisasiController extends Controller
         $updateData = [
             'nama' => $request->nama,
             'jabatan' => $request->jabatan,
-            'nomor' => $request->nomor
         ];
 
         $data->update($updateData);

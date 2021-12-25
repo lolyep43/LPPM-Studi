@@ -9,17 +9,29 @@
 				<div class="p-30 mb-30 card-view my-auto">
 					<h3 class="mt-30 mb-5 text-center"><a href="#"><b>STRUKTUR ORGANISASI</b></a></h3>
 					<div class="tree">
-						<ul>
-							@foreach($data as $isi_struktur_organisasi)
+						@foreach($data as $isi_struktur_organisasi)
 							@if($isi_struktur_organisasi->jabatan == 'Ketua LPPM')
-							<li><a>{{$isi_struktur_organisasi->jabatan}}<br>{{$isi_struktur_organisasi->nama}}<br>{{$isi_struktur_organisasi->nomor}}</a>
+							<ul>
+								<li><a>{{$isi_struktur_organisasi->jabatan}}<br>{{$isi_struktur_organisasi->nama}}</a>
 								<ul>
 									@foreach($data as $isi_struktur_organisasi)
-									@if($isi_struktur_organisasi->jabatan == 'Admin')
-									<li>
-										<a>{{$isi_struktur_organisasi->jabatan}}<br>{{$isi_struktur_organisasi->nama}}<br>{{$isi_struktur_organisasi->nomor}}</a>
-									</li>
-									@endif
+										@foreach($data_admin as $isi_struktur_admin)
+										@if($isi_struktur_organisasi->jabatan == 'Super Admin' && $isi_struktur_admin->id_atasan == $isi_struktur_organisasi->id && !in_array($isi_struktur_organisasi->id, $arr))
+										<li>
+											<style>{{array_push($arr, $isi_struktur_organisasi->id)}}</style>
+											<a>{{$isi_struktur_organisasi->jabatan}}<br>{{$isi_struktur_organisasi->nama}}</a>
+											<ul>
+												@foreach($data_admin as $isi_struktur_admin)
+												@if($isi_struktur_admin->id_atasan == $isi_struktur_organisasi->id )
+												<li>
+													<a>{{$isi_struktur_admin->jabatan}}<br>{{$isi_struktur_admin->nama}}</a>
+												</li>
+												@endif
+												@endforeach
+											</ul>
+										</li>
+										@endif
+										@endforeach
 									@endforeach
 								</ul>
 							</li>

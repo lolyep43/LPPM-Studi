@@ -17,6 +17,7 @@ use App\InovasiIndustri;
 use App\Halaman;
 use App\BukuAjar;
 use App\StrukturOrganisasi;
+use App\StrukturAdmin;
 use App\deskripsiFokus;
 use Illuminate\Http\Request;
 
@@ -71,11 +72,13 @@ class BlogController extends Controller
 
     public function isi_struktur_organisasi()
     {
+        $arr = [];
         $post = Posts::latest()->paginate(5);
         $pengumuman = Pengumuman::latest()->paginate(5);
         $agenda = Agenda::latest()->paginate(5);
         $data = StrukturOrganisasi::all();
-        return view('blog.struktur_organisasi.detail_struktur_organisasi', compact('data', 'post', 'pengumuman', 'agenda'));
+        $data_admin = StrukturAdmin::all();
+        return view('blog.struktur_organisasi.detail_struktur_organisasi', compact('data', 'post', 'pengumuman', 'agenda', 'data_admin','arr'));
     }
 
     public function isi_hasil_pengabdian($slug)

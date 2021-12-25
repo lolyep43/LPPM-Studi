@@ -24,15 +24,21 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-8">
-                        <form class="" action="{{ route('struktur-organisasi.update', $data->id) }}" method="POST" enctype="multipart/form-data">
+                        <form class="" action="{{ route('struktur-admin.update', $data->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH ')
                             <div class="position-relative form-group"><label>Nama</label><input name="nama" type="text" class="form-control" value="{{ $data->nama }}"></div>
                             <div class="position-relative form-group"><label>Jabatan</label>
                                 <select name="jabatan" class="form-control">
-                                    <option {{ $data->jabatan == 'Ketua LPPM' ? "selected" : "" }} value="Ketua LPPM">Ketua LPPM</option>
-                                    <option {{ $data->jabatan == 'Super Admin' ? "selected" : "" }} value="Super Admin">Super Admin</option>
                                     <option {{ $data->jabatan == 'Admin' ? "selected" : "" }} value="Admin">Admin</option>
+                                </select>
+                            </div>
+                            <div class="position-relative form-group"><label>Atasan</label>
+                                <select name="id_atasan" class="form-control">
+                                    @foreach($items->flatten() as $item)
+                                    <option {{ $data->id_atasan == $item->id ? "selected" : "" }} value="{{$item->id}}">{{$item->nama}}</option>
+                                    @endforeach
+                                    
                                 </select>
                             </div>
                     </div>

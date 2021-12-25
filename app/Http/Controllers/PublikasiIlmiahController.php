@@ -136,7 +136,7 @@ class PublikasiIlmiahController extends Controller
             ];
         }
 
-        $publikasi_ilmiahn->update($post_data);
+        $publikasi_ilmiah->update($post_data);
         return redirect()->route('publikasi-ilmiah.index')->with('success', 'Data berhasil diperbarui');
     }
 

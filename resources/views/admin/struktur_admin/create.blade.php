@@ -24,17 +24,21 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <form class="" action="{{ route('struktur-organisasi.store') }}" method="POST" enctype="multipart/form-data">
+                        
+                        <form class="" action="{{ route('struktur-admin.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="position-relative form-group"><label>Nama</label><input name="nama" type="text" class="form-control"></div>
-                            <div class="position-relative form-group"><label>Jabatan</label>
-                                <select name="jabatan" class="form-control">
-                                    <option value="Ketua LPPM">Ketua LPPM</option>
-                                    <option value="Super Admin">Super Admin</option>
-                                    <option value="Admin">Admin</option>
+                            <div class="position-relative form-group"><label>Admin</label><input name="jabatan" type="text" class="form-control" value="Admin"></div>
+                            <div class="position-relative form-group"><label>Atasan</label>
+                                <select name="id_atasan" class="form-control">
+                                    @foreach($items->flatten() as $item)
+                                        <option value="{{ $item->id }}">{{ $item->nama}}</option>
+                                    @endforeach
                                 </select>
                             </div>
+                            
                             <button class="mt-1 btn btn-primary" style="float:right">Tambah</button>
+                     
                     </div>
                 </div>
             </div>

@@ -479,11 +479,11 @@
                                     Halaman
                                 </a>
                             </li>
-                            <li>
-                                <a href="{{ route('struktur-organisasi.index') }}">
-                                    <i class="metismenu-icon pe-7s-display2"></i>
-                                    Struktur Organisasi
-                                </a>
+                            <li class="drop-down"><a href="#!">Struktur Organisasi<i class="metismenu-icon pe-7s-display2"></i></a>
+                                <ul class="drop-down-menu drop-down-inner">
+                                    <li><a href="{{ route('struktur-organisasi.index') }}">Struktur Super Admin & Ketua LPPM</a></li>
+                                    <li><a href="{{ route('struktur-admin.index') }}">Struktur Admin</a></li>
+                                </ul>
                             </li>
                             @can('super-admin')
                             <li class="app-sidebar__heading">Tambah Akun</li>
