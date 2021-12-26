@@ -5,7 +5,7 @@
 <section style="padding-bottom: 25px;">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12 col-lg-8 justify-content-center">
+			<div class="col-md-12 col-lg-9">
 				<div class="p-30 mb-30 card-view my-auto">
 					<h3 class="mt-30 mb-5 text-center"><a href="#"><b>STRUKTUR ORGANISASI</b></a></h3>
 					<div class="tree">
@@ -16,13 +16,14 @@
 								<ul>
 									@foreach($data as $isi_struktur_organisasi)
 										@foreach($data_admin as $isi_struktur_admin)
-										@if($isi_struktur_organisasi->jabatan == 'Super Admin' && $isi_struktur_admin->id_atasan == $isi_struktur_organisasi->id && !in_array($isi_struktur_organisasi->id, $arr))
+										@if($isi_struktur_organisasi->jabatan == 'Super Admin' && $isi_struktur_admin->id_atasan != $isi_struktur_organisasi->id && !in_array($isi_struktur_organisasi->id, $arr))
 										<li>
 											<style>{{array_push($arr, $isi_struktur_organisasi->id)}}</style>
+											{{-- {{implode(',',$arr)}} --}}
 											<a>{{$isi_struktur_organisasi->jabatan}}<br>{{$isi_struktur_organisasi->nama}}</a>
 											<ul>
 												@foreach($data_admin as $isi_struktur_admin)
-												@if($isi_struktur_admin->id_atasan == $isi_struktur_organisasi->id )
+												@if($isi_struktur_admin->id_atasan == $isi_struktur_organisasi->id)
 												<li>
 													<a>{{$isi_struktur_admin->jabatan}}<br>{{$isi_struktur_admin->nama}}</a>
 												</li>
@@ -41,7 +42,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-12 col-lg-4">
+			<div class="col-md-12 col-lg-3">
 				<div class="mb-30 p-30 card-view">
 					<h4 class="p-title"><b>BERITA</b></h4>
 					<div class="sided-80x mb-20">

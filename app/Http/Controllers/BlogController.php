@@ -73,12 +73,13 @@ class BlogController extends Controller
     public function isi_struktur_organisasi()
     {
         $arr = [];
+        $arr2 = [];
         $post = Posts::latest()->paginate(5);
         $pengumuman = Pengumuman::latest()->paginate(5);
         $agenda = Agenda::latest()->paginate(5);
         $data = StrukturOrganisasi::all();
         $data_admin = StrukturAdmin::all();
-        return view('blog.struktur_organisasi.detail_struktur_organisasi', compact('data', 'post', 'pengumuman', 'agenda', 'data_admin','arr'));
+        return view('blog.struktur_organisasi.detail_struktur_organisasi', compact('data', 'post', 'pengumuman', 'agenda', 'data_admin','arr','arr2'));
     }
 
     public function isi_hasil_pengabdian($slug)
