@@ -27,13 +27,7 @@
                         <form class="" action="{{ route('struktur-organisasi.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="position-relative form-group"><label>Nama</label><input name="nama" type="text" class="form-control"></div>
-                            <div class="position-relative form-group"><label>Jabatan</label>
-                                <select name="jabatan" class="form-control">
-                                    <option value="Ketua LPPM">Ketua LPPM</option>
-                                    <option value="Super Admin">Super Admin</option>
-                                    <option value="Admin">Admin</option>
-                                </select>
-                            </div>
+                            <div class="position-relative form-group"><label>Jabatan</label><input name="jabatan" type="text" class="form-control" value="Super Admin"></div>
                             <button class="mt-1 btn btn-primary" style="float:right">Tambah</button>
                     </div>
                 </div>

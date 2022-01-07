@@ -32,7 +32,6 @@
                                 <select name="jabatan" class="form-control">
                                     <option {{ $data->jabatan == 'Ketua LPPM' ? "selected" : "" }} value="Ketua LPPM">Ketua LPPM</option>
                                     <option {{ $data->jabatan == 'Super Admin' ? "selected" : "" }} value="Super Admin">Super Admin</option>
-                                    <option {{ $data->jabatan == 'Admin' ? "selected" : "" }} value="Admin">Admin</option>
                                 </select>
                             </div>
                     </div>
