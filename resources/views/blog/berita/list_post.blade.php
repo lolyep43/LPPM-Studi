@@ -1,5 +1,6 @@
 @extends('blog_layouts.content')
 @section('judul', 'Berita - LPPM ITK')
+
 @section('isi')
 <section style="padding-bottom: 25px;">
 	<div class="container">
@@ -21,10 +22,14 @@
 						</div>
 					</div>
 					@endforeach
+					@if (!$data->count())
+						<h5>Data tidak ditemukan dengan kata kunci "{{app('request')->input('c')}}"</h5>
+					@endif
 					{{$data->links()}}
 				</div>
 			</div>
 			<div class="col-md-12 col-lg-4">
+                <x-search placeholder="cari berita ..."/>
 				<div class="mb-30 p-30 card-view">
 					<h4 class="p-title"><b>PENGUMUMAN</b></h4>
 					<div class="sided-80x mb-20">

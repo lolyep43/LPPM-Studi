@@ -136,12 +136,17 @@ class BlogController extends Controller
         return view('blog.halaman.detail_halaman', compact('data', 'post', 'pengumuman', 'agenda'));
     }
 
-    public function list_blog()
+    public function list_blog(Request $request)
     {
+        $cari = $request->c;
         $post = Posts::latest()->paginate(5);
         $pengumuman = Pengumuman::latest()->paginate(5);
         $agenda = Agenda::latest()->paginate(5);
-        $data = Posts::latest()->paginate(10);
+        if($cari){
+            $data = Posts::where("judul", "LIKE", "%$cari%")->latest()->paginate(10);
+        }else{
+            $data = Posts::latest()->paginate(10);
+        }
         return view('blog.berita.list_post', compact('data', 'post', 'pengumuman', 'agenda'));
     }
 
@@ -230,75 +235,120 @@ class BlogController extends Controller
     }
 
 
-    public function list_pengumuman()
+    public function list_pengumuman(Request $request)
     {
+        $cari = $request->c;
         $post = Posts::latest()->paginate(5);
         $pengumuman = Pengumuman::latest()->paginate(5);
         $agenda = Agenda::latest()->paginate(5);
-        $data = Pengumuman::latest()->paginate(10);
+        if($cari){
+            $data = Pengumuman::where("judul", "LIKE", "%$cari%")->latest()->paginate(10);
+        }else{
+            $data = Pengumuman::latest()->paginate(10);
+        }
         return view('blog.pengumuman.list_pengumuman', compact('data', 'post', 'pengumuman', 'agenda'));
     }
 
-    public function list_agenda()
+    public function list_agenda(Request $request)
     {
+        $cari = $request->c;
         $post = Posts::latest()->paginate(5);
         $pengumuman = Pengumuman::latest()->paginate(5);
         $agenda = Agenda::latest()->paginate(5);
-        $data = Agenda::latest()->paginate(10);
+        if ($cari) {
+            $data = Agenda::where("judul", "LIKE", "%$cari%")->orWhere("tanggal", "LIKE", "%$cari%")->latest()->paginate(10);
+        } else {
+            $data = Agenda::latest()->paginate(10);
+        }
         return view('blog.agenda.list_agenda', compact('data', 'post', 'pengumuman', 'agenda'));
     }
 
-    public function list_hasil_penelitian()
+    public function list_hasil_penelitian(Request $request)
     {
+        $cari = $request->c;
         $post = Posts::latest()->paginate(5);
         $pengumuman = Pengumuman::latest()->paginate(5);
         $agenda = Agenda::latest()->paginate(5);
-        $data = HasilPenelitian::latest()->paginate(10);
+        if ($cari) {
+            $data = HasilPenelitian::where("judul", "LIKE", "%$cari%")->orWhere("peneliti", "LIKE", "%$cari%")->latest()->paginate(10);
+        } else {
+            $data = HasilPenelitian::latest()->paginate(10);
+        }
         return view('blog.hasil_penelitian.list_hasil_penelitian', compact('data', 'post', 'pengumuman', 'agenda'));
     }
 
-    public function list_hasil_pengabdian()
+    public function list_hasil_pengabdian(Request $request)
     {
+        $cari = $request->c;
         $post = Posts::latest()->paginate(5);
         $pengumuman = Pengumuman::latest()->paginate(5);
         $agenda = Agenda::latest()->paginate(5);
-        $data = HasilPengabdian::latest()->paginate(10);
+        if ($cari) {
+            $data = HasilPengabdian::where("judul", "LIKE", "%$cari%")->orWhere("peneliti", "LIKE", "%$cari%")->latest()->paginate(10);
+        } else {
+            $data = HasilPengabdian::latest()->paginate(10);
+        }
+        
         return view('blog.hasil_pengabdian.list_hasil_pengabdian', compact('data', 'post', 'pengumuman', 'agenda'));
     }
 
-    public function list_buku_ajar()
+    public function list_buku_ajar(Request $request)
     {
+        $cari = $request->c;
         $post = Posts::latest()->paginate(5);
         $pengumuman = Pengumuman::latest()->paginate(5);
         $agenda = Agenda::latest()->paginate(5);
-        $data = BukuAjar::latest()->paginate(10);
+        if ($cari) {
+            $data = BukuAjar::where("judul", "LIKE", "%$cari%")->orWhere("pengarang", "LIKE", "%$cari%")->orWhere("penerbit", "LIKE", "%$cari%")->orWhere("tahun", "LIKE", "%$cari%")->latest()->paginate(10);
+        } else {
+            $data = BukuAjar::latest()->paginate(10);
+        }
+        
         return view('blog.buku_ajar.list_buku_ajar', compact('data', 'post', 'pengumuman', 'agenda'));
     }
 
-    public function list_publikasi_ilmiah()
+    public function list_publikasi_ilmiah(Request $request)
     {
+        $cari  = $request->c;
         $post = Posts::latest()->paginate(5);
         $pengumuman = Pengumuman::latest()->paginate(5);
         $agenda = Agenda::latest()->paginate(5);
-        $data = PublikasiIlmiah::latest()->paginate(10);
+        if ($cari) {
+            $data = PublikasiIlmiah::where("judul", "LIKE", "%$cari%")->orWhere("tahun", "LIKE", "%$cari%")->orWhere("peneliti", "LIKE", "%$cari%")->orWhere("fokus_riset", "LIKE", "%$cari%")->latest()->paginate(10);
+        } else {
+            $data = PublikasiIlmiah::latest()->paginate(10);
+        }
+        
         return view('blog.publikasi_ilmiah.list_publikasi_ilmiah', compact('data', 'post', 'pengumuman', 'agenda'));
     }
 
-    public function list_inovasi_mandiri()
+    public function list_inovasi_mandiri(Request $request)
     {
+        $cari = $request->c;
         $post = Posts::latest()->paginate(5);
         $pengumuman = Pengumuman::latest()->paginate(5);
         $agenda = Agenda::latest()->paginate(5);
-        $data = InovasiMandiri::latest()->paginate(10);
+        if ($cari) {
+            $data = InovasiMandiri::where("judul", "LIKE", "%$cari%")->latest()->paginate(10);
+        } else {
+            $data = InovasiMandiri::latest()->paginate(10);
+        }
+        
         return view('blog.inovasi_mandiri.list_inovasi_mandiri', compact('data', 'post', 'pengumuman', 'agenda'));
     }
 
-    public function list_inovasi_industri()
+    public function list_inovasi_industri(Request $request)
     {
+        $cari = $request->c;
         $post = Posts::latest()->paginate(5);
         $pengumuman = Pengumuman::latest()->paginate(5);
         $agenda = Agenda::latest()->paginate(5);
-        $data = InovasiIndustri::latest()->paginate(10);
+        if ($cari) {
+            $data = InovasiIndustri::where("judul", "LIKE", "%$cari%")->latest()->paginate(10);
+        } else {
+            $data = InovasiIndustri::latest()->paginate(10);
+        }
+        
         return view('blog.inovasi_industri.list_inovasi_industri', compact('data', 'post', 'pengumuman', 'agenda'));
     }
 

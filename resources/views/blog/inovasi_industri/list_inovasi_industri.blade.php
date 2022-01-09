@@ -21,10 +21,14 @@
 						</div>
 					</div>
 					@endforeach
+                    @if (!$data->count())
+                        <h5>Data tidak ditemukan dengan kata kunci "{{app('request')->input('c')}}"</h5>
+                    @endif
 					{{$data->links()}}
 				</div>
 			</div>
 			<div class="col-md-12 col-lg-4">
+                <x-search placeholder="cari judul ..."/>
                 <div class="mb-30 p-30 card-view">
                     <h4 class="p-title"><b>BERITA</b></h4>
                     <div class="sided-80x mb-20">

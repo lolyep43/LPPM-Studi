@@ -22,6 +22,7 @@
                         </div>
                     </div>
                     @endforeach
+                    {{ $data_hasil_penelitian->links() }}
                     <h6><a class="mt-15 plr-20 btn-b-lg btn-fill-primary dplay-block mlr-auto" href="{{ route('hasil-penelitian.list')}}"><b>Lihat Seluruh Hasil Penelitian</b></a></h6>
                     <br>
                 </div>
@@ -41,6 +42,7 @@
                         </div>
                     </div>
                     @endforeach
+                    {{ $data_publikasi_ilmiah->links()}}
                     <h6><a class="mt-15 plr-20 btn-b-lg btn-fill-primary dplay-block mlr-auto" href="{{ route('publikasi-ilmiah.list')}}"><b>Lihat Seluruh Publikasi Ilmiah</b></a></h6>
                 </div> 
             </div>

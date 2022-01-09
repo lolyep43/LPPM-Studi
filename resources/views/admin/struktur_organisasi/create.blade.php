@@ -26,12 +26,24 @@
                     <div class="col-md-6">
                         <form class="" action="{{ route('struktur-organisasi.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <div class="position-relative form-group"><label>Nama</label><input name="nama" type="text" class="form-control"></div>
-                            <div class="position-relative form-group"><label>Jabatan</label>
-                                <select name="jabatan" class="form-control">
-                                    <option value="Ketua LPPM">Ketua LPPM</option>
-                                    <option value="Super Admin">Super Admin</option>
-                                    <option value="Admin">Admin</option>
+                            <div class="position-relative form-group">
+                                <label>Nama</label>
+                                <input name="nama" type="text" class="form-control">
+                            </div>
+                            <div class="position-relative form-group">
+                                <label>Jabatan</label>
+                                <input name="jabatan" type="text" class="form-control">
+                            </div>
+                            <div class="position-relative form-group">
+                                <label>Level</label>
+                                <input name="level" type="text" class="form-control">
+                            </div>
+                            <div class="position-relative form-group">
+                                <label>Parent</label>
+                                <select name="parent" class="form-control" >
+                                    @foreach ($data as $item)
+                                        <option value="{{ $item->id }}"> [{{$item->jabatan}}]{{ $item->nama }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <button class="mt-1 btn btn-primary" style="float:right">Tambah</button>
