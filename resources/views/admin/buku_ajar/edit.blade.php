@@ -1,5 +1,5 @@
 @extends('admin_layouts.master')
-@section('title', 'Edit Publikasi Ilmiah - LPPM ITK')
+@section('title', 'Edit Buku Ajar- LPPM ITK')
 
 @section('content')
 

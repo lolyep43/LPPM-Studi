@@ -36,12 +36,9 @@
                                     <option value="Kemaritiman">Kemaritiman</option>
                                 </select>
                             <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="konten1" ></textarea></div>
-                            </div>
+                            <div class="position-relative form-group"><label>Manfaat</label><textarea name="manfaat" class="form-control" id="konten2"></textarea></div>
                     </div>
-
-
                     <div class="col-md-6">
-                        <div class="position-relative form-group"><label>Manfaat</label><textarea name="manfaat" class="form-control" id="konten2"></textarea></div>
                         <div class="position-relative form-group"><label>Tahun</label><input name="tahun" type="text" class="form-control"></div>
                         <div class="position-relative form-group"><label>Foto</label><input name="foto" type="file" class="form-control-file">
                         </div>

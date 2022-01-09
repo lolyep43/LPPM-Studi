@@ -29,7 +29,6 @@ class UserController extends Controller
         $User = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password_asli'=>$request->password,
             'password' => Hash::make($request->password),
             'role' => $request->role
         ]);
@@ -56,7 +55,6 @@ class UserController extends Controller
         $updateUser = [
             'name' => $request->name,
             'email' => $request->email,
-            'password_asli' => $request->password,
             'password' => Hash::make($request->password),
             'role' => $request->role
         ];

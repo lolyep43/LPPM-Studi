@@ -12,6 +12,7 @@ use App\Dokumen;
 use App\Galeri;
 use App\InovasiMandiri;
 use App\InovasiIndustri;
+use App\BukuAjar;
 
 use Illuminate\Http\Request;
 
@@ -29,6 +30,7 @@ class DashboardController extends Controller
         $galeri = Galeri::all();
         $inovasi_mandiri = InovasiMandiri::all();
         $inovasi_industri = InovasiIndustri::all();
-        return view('admin.dashboards.index', compact('post', 'agenda', 'pengumuman', 'hasil_penelitian', 'hasil_pengabdian', 'publikasi_ilmiah', 'inovasi_mandiri', 'inovasi_industri','dokumen', 'galeri'));
+        $buku_ajar = BukuAjar::all();
+        return view('admin.dashboards.index', compact('post', 'agenda', 'pengumuman', 'hasil_penelitian', 'hasil_pengabdian', 'buku_ajar', 'publikasi_ilmiah', 'inovasi_mandiri', 'inovasi_industri','dokumen', 'galeri'));
     }
 }

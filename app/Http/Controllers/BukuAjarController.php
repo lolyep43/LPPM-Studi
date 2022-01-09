@@ -99,6 +99,6 @@ class BukuAjarController extends Controller
     {
         $buku_ajar = BukuAjar::findOrFail($id);
         $buku_ajar->delete();
-        return redirect()->route('buku-ajar.index')->with('success', 'Berita berhasil dihapus');
+        return redirect()->route('buku-ajar.index')->with('success', 'Buku Ajar berhasil dihapus');
     }
 }

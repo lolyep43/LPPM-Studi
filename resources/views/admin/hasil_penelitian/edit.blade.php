@@ -37,10 +37,11 @@
                                     <option {{ $hasil_penelitian->fokus_riset == 'Kemaritiman' ? "selected" : "" }} value="Kemaritiman">Kemaritiman</option>
                                 </select>
                             </div>    
-                            <div class="position-relative form-group"><label>Manfaat</label><textarea name="manfaat" class="form-control" id="konten2">{{ $hasil_penelitian->manfaat }}</textarea></div>
                             <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="konten1">{{ $hasil_penelitian->deskripsi }}</textarea></div>
+                            <div class="position-relative form-group"><label>Manfaat</label><textarea name="manfaat" class="form-control" id="konten2">{{ $hasil_penelitian->manfaat }}</textarea></div> 
                     </div>
                     <div class="col-md-4">
+                        
                         <div class="position-relative form-group"><label>Tahun</label><input name="tahun" type="text" class="form-control" value="{{ $hasil_penelitian->tahun }}"></div>
                         <div class="position-relative form-group"><label>Foto</label><br>
                             <img src="{{ asset($hasil_penelitian->foto) }}" class="img-fluid" style="width:100%" target="_blank"><br><br>

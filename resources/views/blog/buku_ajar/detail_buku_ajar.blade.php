@@ -12,8 +12,6 @@
 					<img src="{{ asset($isi_buku_ajar->gambar)}}" alt="">
 					<h3 class="mt-30 mb-5"><a href="#"><b>{{$isi_buku_ajar->judul}}</b></a></h3>
 					<ul class="list-li-mr-10 color-lite-black">
-						<li><i class="mr-5 font-12 ion-android-person"></i>Admin</li><br><br>
-					<ul class="list-li-mr-10 color-lite-black">
                         <li><i class="mr-5 font-12 ion-android-person"></i>Pengarang: {{$isi_buku_ajar->pengarang}}</li><br>
                         <li><i class="mr-5 font-12 ion-android-person"></i>Penerbit: {{$isi_buku_ajar->penerbit}}</li>
                         <li><i class="mr-5 font-12 ion-clock"></i>Tahun terbit: {{$isi_buku_ajar->tahun}}</li>
