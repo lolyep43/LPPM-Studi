@@ -28,7 +28,7 @@
                         <form class="" action="{{ route('struktur-admin.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="position-relative form-group"><label>Nama</label><input name="nama" type="text" class="form-control"></div>
-                            <div class="position-relative form-group"><label>Admin</label><input name="jabatan" type="text" class="form-control" value="Admin"></div>
+                            <div class="position-relative form-group"><label>Jabatan</label><input name="jabatan" type="text" class="form-control" value="Admin"></div>
                             <div class="position-relative form-group"><label>Atasan</label>
                                 <select name="id_atasan" class="form-control">
                                     @foreach($items->flatten() as $item)
