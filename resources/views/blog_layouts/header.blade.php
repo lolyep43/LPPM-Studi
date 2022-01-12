@@ -68,33 +68,17 @@
                         <ul class="drop-down-menu drop-down-inner">
                             <div id="halaman">
                                 <nav>
-                                    <ul>
-                                        <li><a href="">Energi</a>
-                                            <ul>
-                                                <li><a href="{{ route('energi.isi') }}">Deskripsi</a></li>
-                                                <li><a href="{{ route('energi.list') }}">List</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="">Pertanian dan Pangan</a>
-                                            <ul>
-                                                <li><a href="{{ route('pertanian-dan-pangan.isi') }}">Deskripsi</a></li>
-                                                <li><a href="{{ route('pertanian-dan-pangan.list') }}">List</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="">Smart City</a>
-                                            <ul>
-                                                <li><a href="{{ route('smart-city.isi') }}">Deskripsi</a></li>
-                                                <li><a href="{{ route('smart-city.list') }}">List</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="">Kemaritiman</a>
-                                            <ul>
-                                                <li><a href="{{ route('kemaritiman.isi') }}">Deskripsi</a></li>
-                                                <li><a href="{{ route('kemaritiman.list') }}">List</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </nav>
+                                    @foreach($data_fokus_riset as $result)
+                                        <ul>
+                                            <li><a href="">{{$result->judul}}</a>
+                                                <ul>
+                                                    <li><a href="{{ route('fokus-riset.isi', $result->slug) }}">Deskripsi</a></li>
+                                                    <li><a href="{{ route('fokus-riset.list', $result->slug) }}">Luaran</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    @endforeach
+                                 </nav>
                             </div>
                         </ul>
                     </li>

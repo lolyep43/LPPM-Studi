@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\PublikasiIlmiah;
+use App\deskripsiFokus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -27,7 +28,8 @@ class PublikasiIlmiahController extends Controller
      */
     public function create()
     {
-        return view('admin.publikasi_ilmiah.create');
+        $data = deskripsiFokus::all();
+        return view('admin.publikasi_ilmiah.create',compact('data'));
     }
 
     /**
@@ -59,7 +61,8 @@ class PublikasiIlmiahController extends Controller
             'manfaat' => $request->manfaat,
             'tahun' => $request->tahun,
             'foto' => 'public/uploads/publikasi-ilmiah/' . $new_foto,
-            'slug' => Str::slug($request->judul)
+            'slug' => Str::slug($request->judul),
+            'slug2' => Str::slug($request->fokus_riset)
         ]);
 
         $foto->move('public/uploads/publikasi-ilmiah/', $new_foto);
@@ -85,8 +88,9 @@ class PublikasiIlmiahController extends Controller
      */
     public function edit($id)
     {
+        $data = deskripsiFokus::all();
         $publikasi_ilmiah = PublikasiIlmiah::findOrFail($id);
-        return view('admin.publikasi_ilmiah.edit', compact('publikasi_ilmiah'));
+        return view('admin.publikasi_ilmiah.edit', compact('publikasi_ilmiah','data'));
     }
 
     /**
@@ -122,7 +126,8 @@ class PublikasiIlmiahController extends Controller
                 'manfaat' => $request->manfaat,
                 'foto' => 'public/uploads/publikasi-ilmiah/' . $new_foto,
                 'tahun' => $request->tahun,
-                'slug' => Str::slug($request->judul)
+                'slug' => Str::slug($request->judul),
+                'slug2' => Str::slug($request->fokus_riset)
             ];
         } else {
             $post_data = [
@@ -132,7 +137,8 @@ class PublikasiIlmiahController extends Controller
                 'deskripsi' => $request->deskripsi,
                 'manfaat' => $request->manfaat,
                 'tahun' => $request->tahun,
-                'slug' => Str::slug($request->judul)
+                'slug' => Str::slug($request->judul),
+                'slug2' => Str::slug($request->fokus_riset)
             ];
         }
 

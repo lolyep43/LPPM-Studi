@@ -23,23 +23,20 @@
         <div class="main-card mb-3 card">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <form class="" action="{{ route('buku-ajar.update', $buku_ajar->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH ')
                             <div class="position-relative form-group"><label>Pengarang</label><input name="pengarang" type="text" class="form-control" value="{{ $buku_ajar->pengarang }}"></div>
                             <div class="position-relative form-group"><label>Judul</label><input name="judul" type="text" class="form-control" value="{{ $buku_ajar->judul }}"></div>
                             <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="konten">{{ $buku_ajar->deskripsi }}</textarea></div>  
-                            
-                    </div>
-                    <div class="col-md-4">
-                        <div class="position-relative form-group"><label>Penerbit</label><input name="penerbit" type="text" class="form-control" value="{{ $buku_ajar->penerbit }}"></div>
-                        <div class="position-relative form-group"><label>Tahun Terbit</label><input name="tahun" type="text" class="form-control" value="{{ $buku_ajar->tahun }}"></div>
-                        <div class="position-relative form-group"><label>Gambar</label><br>
-                            <img src="{{ asset($buku_ajar->gambar) }}" class="img-fluid" style="width:100%" target="_blank"><br><br>
-                            <input name="gambar" type="file" class="form-control-file">
-                        </div>
-                        <button class="mt-1 btn btn-primary" style="float:right">Update</button>
+                            <div class="position-relative form-group"><label>Penerbit</label><input name="penerbit" type="text" class="form-control" value="{{ $buku_ajar->penerbit }}"></div>
+                            <div class="position-relative form-group"><label>Tahun Terbit</label><input name="tahun" type="text" class="form-control" value="{{ $buku_ajar->tahun }}"></div>
+                            <div class="position-relative form-group"><label>Gambar</label><br>
+                                <img src="{{ asset($buku_ajar->gambar) }}" class="img-fluid" style="width:100%" target="_blank"><br><br>
+                                <input name="gambar" type="file" class="form-control-file">
+                            </div>
+                            <button class="mt-1 btn btn-primary" style="float:right">Update</button>
                         </form>
                     </div>
                 </div>

@@ -23,7 +23,7 @@
         <div class="main-card mb-3 card">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <form class="" action="{{ route('hasil-penelitian.update', $hasil_penelitian->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH ')
@@ -31,23 +31,20 @@
                             <div class="position-relative form-group"><label>Judul</label><input name="judul" type="text" class="form-control" value="{{ $hasil_penelitian->judul }}"></div>
                             <div class="position-relative form-group"><label>Fokus Riset</label>
                                 <select name="fokus_riset" class="form-control">
-                                    <option {{ $hasil_penelitian->fokus_riset == 'Energi' ? "selected" : "" }} value="Energi">Energi</option>
-                                    <option {{ $hasil_penelitian->fokus_riset == 'Pangan dan Pertanian' ? "selected" : "" }} value="Pangan dan Pertanian">Pangan dan Pertanian</option>
-                                    <option {{ $hasil_penelitian->fokus_riset == 'Smart City' ? "selected" : "" }} value="Smart City">Smart City</option>
-                                    <option {{ $hasil_penelitian->fokus_riset == 'Kemaritiman' ? "selected" : "" }} value="Kemaritiman">Kemaritiman</option>
+                                    <option value="">Pilih Fokus Riset</option>
+                                    @foreach ($data as $item)
+                                        <option value="{{$item->judul}}" {{$item->judul== $hasil_penelitian->fokus_riset? "selected":""}}>{{$item->judul}}</option>
+                                    @endforeach
                                 </select>
                             </div>    
                             <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="konten1">{{ $hasil_penelitian->deskripsi }}</textarea></div>
                             <div class="position-relative form-group"><label>Manfaat</label><textarea name="manfaat" class="form-control" id="konten2">{{ $hasil_penelitian->manfaat }}</textarea></div> 
-                    </div>
-                    <div class="col-md-4">
-                        
-                        <div class="position-relative form-group"><label>Tahun</label><input name="tahun" type="text" class="form-control" value="{{ $hasil_penelitian->tahun }}"></div>
-                        <div class="position-relative form-group"><label>Foto</label><br>
-                            <img src="{{ asset($hasil_penelitian->foto) }}" class="img-fluid" style="width:100%" target="_blank"><br><br>
-                            <input name="foto" type="file" class="form-control-file">
-                        </div>
-                        <button class="mt-1 btn btn-primary" style="float:right">Update</button>
+                            <div class="position-relative form-group"><label>Tahun</label><input name="tahun" type="text" class="form-control" value="{{ $hasil_penelitian->tahun }}"></div>
+                            <div class="position-relative form-group"><label>Foto</label><br>
+                                <img src="{{ asset($hasil_penelitian->foto) }}" class="img-fluid" style="width:100%" target="_blank"><br><br>
+                                <input name="foto" type="file" class="form-control-file">
+                            </div>
+                            <button class="mt-1 btn btn-primary" style="float:right">Update</button>
                         </form>
                     </div>
                 </div>

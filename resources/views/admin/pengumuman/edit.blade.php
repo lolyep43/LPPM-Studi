@@ -23,19 +23,17 @@
         <div class="main-card mb-3 card">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <form class="" action="{{ route('pengumuman.update', $pengumuman->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH ')
                             <div class="position-relative form-group"><label>Judul</label><input name="judul" type="text" class="form-control" value="{{ $pengumuman->judul }}"></div>
                             <div class="position-relative form-group"><label>Isi</label><textarea name="konten" class="form-control" id="konten">{{ $pengumuman->konten }}</textarea></div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="position-relative form-group"><label>File</label><br>
-                            <a href="{{ asset($pengumuman->file) }}" class="img-fluid" style="width:100px" target="_blank">{{$pengumuman->judul}}</a><br><br>
-                            <input name="file" type="file" class="form-control-file">
-                        </div>
-                        <button class="mt-1 btn btn-warning">Update</button>
+                            <div class="position-relative form-group"><label>File</label><br>
+                                <a href="{{ asset($pengumuman->file) }}" class="img-fluid" style="width:100px" target="_blank">{{$pengumuman->judul}}</a><br><br>
+                                <input name="file" type="file" class="form-control-file">
+                            </div>
+                            <button class="mt-1 btn btn-warning">Update</button>
                         </form>
                     </div>
                 </div>

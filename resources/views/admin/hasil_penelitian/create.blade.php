@@ -23,32 +23,27 @@
         <div class="main-card mb-3 card">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <form class="" action="{{ route('hasil-penelitian.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="position-relative form-group"><label>Peneliti</label><input name="peneliti" type="text" class="form-control"></div>
                             <div class="position-relative form-group"><label>Judul</label><input name="judul" type="text" class="form-control"></div>
                             <div class="position-relative form-group"><label>Fokus Riset</label>
                                 <select name="fokus_riset" class="form-control">
-                                    <option value="Energi">Energi</option>
-                                    <option value="Pangan dan Pertanian">Pangan dan Pertanian</option>
-                                    <option value="Smart City">Smart City</option>
-                                    <option value="Kemaritiman">Kemaritiman</option>
+                                    <option value="">Pilih Fokus Riset</option>
+                                    @foreach ($data as $item => $hasil)
+                                        <option value="{{$hasil->judul}}">{{$hasil->judul}}</option>
+                                    @endforeach
                                 </select>
                             <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="konten1" ></textarea></div>
                             <div class="position-relative form-group"><label>Manfaat</label><textarea name="manfaat" class="form-control" id="konten2"></textarea></div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="position-relative form-group"><label>Tahun</label><input name="tahun" type="text" class="form-control"></div>
-                        <div class="position-relative form-group"><label>Foto</label><input name="foto" type="file" class="form-control-file">
-                        </div>
-                        <button class="mt-1 btn btn-primary" style="float:right">Publish</button>
+                            <div class="position-relative form-group"><label>Tahun</label><input name="tahun" type="text" class="form-control"></div>
+                            <div class="position-relative form-group"><label>Foto</label><input name="foto" type="file" class="form-control-file"></div>
+                            <button class="mt-1 btn btn-primary" style="float:right">Publish</button>
                         </form>
-                        <br>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\HasilPenelitian;
+use App\deskripsiFokus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -27,7 +28,8 @@ class HasilPenelitianController extends Controller
      */
     public function create()
     {
-        return view('admin.hasil_penelitian.create');
+        $data = deskripsiFokus::all();
+        return view('admin.hasil_penelitian.create', compact('data'));
     }
 
     /**
@@ -59,7 +61,8 @@ class HasilPenelitianController extends Controller
             'manfaat' => $request->manfaat,
             'tahun' => $request->tahun,
             'foto' => 'public/uploads/hasil-penelitian/' . $new_foto,
-            'slug' => Str::slug($request->judul)
+            'slug' => Str::slug($request->judul),
+            'slug2' => Str::slug($request->fokus_riset)
         ]);
 
         $foto->move('public/uploads/hasil-penelitian/', $new_foto);
@@ -85,8 +88,9 @@ class HasilPenelitianController extends Controller
      */
     public function edit($id)
     {
+        $data = deskripsiFokus::all();
         $hasil_penelitian = HasilPenelitian::findOrFail($id);
-        return view('admin.hasil_penelitian.edit', compact('hasil_penelitian'));
+        return view('admin.hasil_penelitian.edit', compact('hasil_penelitian','data'));
     }
 
     /**
@@ -122,7 +126,8 @@ class HasilPenelitianController extends Controller
                 'manfaat' => $request->manfaat,
                 'foto' => 'public/uploads/hasil-penelitian/' . $new_foto,
                 'tahun' => $request->tahun,
-                'slug' => Str::slug($request->judul)
+                'slug' => Str::slug($request->judul),
+                'slug2' => Str::slug($request->fokus_riset)
             ];
         } else {
             $post_data = [
@@ -132,7 +137,9 @@ class HasilPenelitianController extends Controller
                 'deskripsi' => $request->deskripsi,
                 'manfaat' => $request->manfaat,
                 'tahun' => $request->tahun,
-                'slug' => Str::slug($request->judul)
+                'slug' => Str::slug($request->judul),
+                'slug2' => Str::slug($request->fokus_riset)
+                
             ];
         }
 

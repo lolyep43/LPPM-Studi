@@ -22,7 +22,7 @@
     <div class="col-lg-12">
         <div class="main-card mb-3 card">
             <div class="card-body">
-                <form class="" action="{{ route('deskripsi-fokus-riset.update', $deskripsi->id) }}" method="POST" enctype="multipart/form-data">
+                <form class="" action="{{ route('fokus-riset.update', $deskripsi->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH ')
                     <div class="position-relative form-group"><label>Deskripsi</label><textarea name="deskripsi" class="form-control" id="konten">{{ $deskripsi->deskripsi }}</textarea></div>

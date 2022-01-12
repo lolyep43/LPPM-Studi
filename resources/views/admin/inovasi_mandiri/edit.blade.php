@@ -23,19 +23,17 @@
         <div class="main-card mb-3 card">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <form class="" action="{{ route('inovasi-mandiri.update', $inovasi_mandiri->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH ')
                             <div class="position-relative form-group"><label>Judul</label><input name="judul" type="text" class="form-control" value="{{ $inovasi_mandiri->judul }}"></div>
                             <div class="position-relative form-group"><label>Isi</label><textarea name="konten" class="form-control" id="konten">{{ $inovasi_mandiri->konten }}</textarea></div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="position-relative form-group"><label>Thumbnail</label><br>
-                            <img src="{{ asset($inovasi_mandiri->gambar) }}" class="img-fluid" style="width:200px"><br><br>
-                            <input name="gambar" type="file" class="form-control-file">
-                        </div>
-                        <button class="mt-1 btn btn-primary">Update</button>
+                            <div class="position-relative form-group"><label>Thumbnail</label><br>
+                                <img src="{{ asset($inovasi_mandiri->gambar) }}" class="img-fluid" style="width:100%"><br><br>
+                                <input name="gambar" type="file" class="form-control-file">
+                            </div>
+                            <button class="mt-1 btn btn-primary">Update</button>
                         </form>
                     </div>
                 </div>

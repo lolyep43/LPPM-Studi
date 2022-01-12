@@ -22,7 +22,6 @@
     <div class="col-lg-12">
         <div class="main-card mb-3 card">
             <div class="card-body">
-
                 <div class="row">
                     <div class="col-md-12">
                         <form class="" action="{{ route('dokumen.store') }}" method="POST" enctype="multipart/form-data">

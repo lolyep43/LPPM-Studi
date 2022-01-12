@@ -23,23 +23,17 @@
         <div class="main-card mb-3 card">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <form class="" action="{{ route('inovasi-mandiri.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="position-relative form-group"><label>Judul</label><input name="judul" type="text" class="form-control"></div>
                             <div class="position-relative form-group"><label>Isi</label><textarea name="konten" class="form-control" id="konten"></textarea></div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="position-relative form-group"><label>Thumbnail</label><input name="gambar" type="file" class="form-control-file">
-                        </div>
-                        <button class="mt-1 btn btn-primary">Publish</button>
+                            <div class="position-relative form-group"><label>Thumbnail</label><input name="gambar" type="file" class="form-control-file" width="70%"></div>
+                            <button class="mt-1 btn btn-primary">Publish</button>
                         </form>
-                        <br>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

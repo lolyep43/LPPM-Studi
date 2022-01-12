@@ -443,9 +443,9 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('deskripsi-fokus-riset.index') }}">
+                                <a href="{{ route('fokus-riset.index') }}">
                                     <i class="metismenu-icon pe-7s-display2"></i>
-                                    Deskrpsi Fokus Riset
+                                    Fokus Riset
                                 </a>
                             </li>
                             <li class="drop-down"><a href="#!">Luaran<i class="metismenu-icon pe-7s-display2"></i></a>
